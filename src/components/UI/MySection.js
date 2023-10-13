@@ -15,7 +15,7 @@ function MySection(props) {
       <Heading mt='48px'>
         <Text color='blue.300' as='span'>
           {"<"}
-          <Text color='red.300' as='span'>
+          <Text color='coral' as='span'>
             {"/"}
           </Text>
         </Text>
