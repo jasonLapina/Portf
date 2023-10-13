@@ -1,3 +1,7 @@
 :root {
   --maxW: 1440px;
 }
+
+.slick-dots li.slick-active button:before {
+  color: coral;
+}
