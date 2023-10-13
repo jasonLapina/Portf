@@ -1,16 +1,20 @@
-import { Box, Center, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Center, Heading, Image, Text, Tooltip } from "@chakra-ui/react";
 import MySection from "./UI/MySection";
 import { Typewriter } from "react-simple-typewriter";
 function Skills() {
   const skills = [
-    "/assets/skills/html.svg",
-    "/assets/skills/css.svg",
-    "/assets/skills/js.svg",
-    "/assets/skills/ts.svg",
-    "/assets/skills/react.svg",
-    "/assets/skills/next.svg",
-    "/assets/skills/git.svg",
-    "/assets/skills/aws.svg",
+    { icon: "/assets/skills/figma.svg", label: "Figma" },
+    { icon: "/assets/skills/html.svg", label: "HTML5" },
+    { icon: "/assets/skills/css.svg", label: "CSS3" },
+    { icon: "/assets/skills/js.svg", label: "Javascript" },
+    { icon: "/assets/skills/ts.svg", label: "Typescript" },
+    { icon: "/assets/skills/react.svg", label: "React" },
+    { icon: "/assets/skills/jest.svg", label: "Jest" },
+    { icon: "/assets/skills/next.svg", label: "Next.js" },
+    { icon: "/assets/skills/git.svg", label: "Git & Github" },
+    { icon: "/assets/skills/aws.svg", label: "Amazon Web Services" },
+    { icon: "/assets/skills/node.svg", label: "Node" },
+    { icon: "/assets/skills/mongodb.svg", label: "MongoDB" },
   ];
 
   return (
@@ -25,20 +29,22 @@ function Skills() {
           />
         </Heading>
         <Center pos='relative' h='100vh'>
-          <Image h='90%' src='/assets/skills-invo.png' borderRadius='full' />
+          <Image h='70%' src='/assets/skills-invo.png' borderRadius='full' />
           {skills.map((item, i) => (
-            <Image
-              w='80px'
-              key={item}
-              src={item}
-              pos='absolute'
-              transform={`rotate(${
-                i * (360 / skills.length)
-              }deg) translateY(-400px) rotate(-${
-                i * (360 / skills.length)
-              }deg)`}
-              filter={`drop-shadow(4px 4px 4px cyan)`}
-            />
+            <Tooltip hasArrow label={item.label}>
+              <Image
+                w='80px'
+                key={item.icon}
+                src={item.icon}
+                pos='absolute'
+                transform={`rotate(${
+                  i * (360 / skills.length)
+                }deg) translateY(-350px) rotate(-${
+                  i * (360 / skills.length)
+                }deg)`}
+                filter={`drop-shadow(4px 4px 4px cyan)`}
+              />
+            </Tooltip>
           ))}
         </Center>
       </MySection>
