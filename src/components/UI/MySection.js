@@ -1,7 +1,7 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 function MySection(props) {
   return (
-    <Box maxW={"var(--maxW)"} mx='auto' {...props}>
+    <Box maxW={"var(--maxW)"} mx='auto' {...props} pos='relative'>
       <Heading data-aos='fade-down' mb='48px' mt='80px'>
         <Text color='blue.300' as='span'>
           {"<"}

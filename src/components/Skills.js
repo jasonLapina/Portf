@@ -1,6 +1,7 @@
 import { Box, Center, Heading, Image, Tooltip } from "@chakra-ui/react";
 import MySection from "./UI/MySection";
 import { Typewriter } from "react-simple-typewriter";
+import MyTypewriter from "./UI/MyTypewriter";
 function Skills() {
   const skills = [
     { icon: "/assets/skills/figma.svg", label: "Figma" },
@@ -20,14 +21,7 @@ function Skills() {
   return (
     <Box>
       <MySection heading='skills'>
-        <Heading textAlign='center' fontWeight='thin'>
-          <Typewriter
-            words={["My tech stack"]}
-            cursor
-            cursorColor='coral'
-            cursorStyle='_'
-          />
-        </Heading>
+        <MyTypewriter words={["My tech stack"]} />
         <Center pos='relative' h='100vh'>
           <Image
             data-aos='fade-up'
