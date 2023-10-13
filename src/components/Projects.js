@@ -1,14 +1,14 @@
-import { Box, Button, Grid, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Grid, Image, Text } from "@chakra-ui/react";
 import MySection from "./UI/MySection";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Typewriter } from "react-simple-typewriter";
+
 import MyTypewriter from "./UI/MyTypewriter";
 
 function Projects() {
   const projs = [
     {
       title: "Leaderbored",
-      text: "Game portal for HTML5 games",
+      text: "Game portal for HTML5 games from Taktyl Studios Inc.",
       image: [
         "/assets/projs/leaderbored.png",
         "/assets/projs/leaderbored2.png",
@@ -23,8 +23,20 @@ function Projects() {
     },
     {
       title: "NomNom",
-      text: "Food browsing app",
+      text: "Food browsing app, personal project",
       image: ["/assets/projs/nomnom1.png", "/assets/projs/nomnom2.png"],
+      link: "https://leaderbored.gg",
+    },
+    {
+      title: "JMG Writes",
+      text: "Copywriter's website, personal project",
+      image: ["/assets/projs/jmg1.png", "/assets/projs/jmg2.png"],
+      link: "https://leaderbored.gg",
+    },
+    {
+      title: "AYO 2023",
+      text: "Event booking website for our client",
+      image: ["/assets/projs/ayo1.png", "/assets/projs/ayo2.png"],
       link: "https://leaderbored.gg",
     },
   ];
@@ -76,7 +88,8 @@ function Projects() {
                   <Text
                     textShadow='2px 2px 4px coral'
                     fontSize='32px'
-                    fontWeight='bold'
+                    fontWeight='thin'
+                    letterSpacing='wide'
                   >
                     {title}
                     <Button
@@ -90,7 +103,7 @@ function Projects() {
                       <ExternalLinkIcon />
                     </Button>
                   </Text>
-                  <Text fontWeight='bold'>{text}</Text>
+                  <Text>{text}</Text>
                 </Box>
                 <Box pos='relative'>
                   <Image
