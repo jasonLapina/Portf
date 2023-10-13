@@ -1,6 +1,8 @@
-import { Box, Button, Grid, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Grid, Heading, Image, Text } from "@chakra-ui/react";
 import MySection from "./UI/MySection";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { Typewriter } from "react-simple-typewriter";
+
 function Projects() {
   const projs = [
     {
@@ -28,6 +30,15 @@ function Projects() {
   return (
     <Box>
       <MySection heading='projects'>
+        <Heading textAlign='center' fontWeight='thin' mb='40px'>
+          <Typewriter
+            words={["Listed below are some of my live projects"]}
+            cursor
+            cursorColor='coral'
+            cursorStyle='_'
+          />
+        </Heading>
+
         <Grid
           // gridTemplateColumns='repeat(auto-fit, minmax(400px,1fr))'
           gridTemplateColumns='1fr 1fr'

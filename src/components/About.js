@@ -46,7 +46,7 @@ function About() {
               <Box key={item.heading}>
                 <Text
                   textAlign='center'
-                  fontWeight='bold'
+                  fontWeight='thin'
                   fontSize='48px'
                   mb='40px'
                 >
