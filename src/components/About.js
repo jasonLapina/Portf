@@ -2,6 +2,7 @@ import { Box, Button, Grid, Image, Text } from "@chakra-ui/react";
 import MySection from "./UI/MySection";
 import Slider from "react-slick";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
+import MyTypewriter from "./UI/MyTypewriter";
 function About() {
   const details = [
     {
@@ -39,6 +40,7 @@ function About() {
   return (
     <Box>
       <MySection heading={"aboutMe"}>
+        <MyTypewriter words={["My info"]} />
         <Box as={Slider} {...sliderSettings}>
           {details.map((item, i) => {
             const isEven = (i + 1) % 2 === 0;
@@ -49,6 +51,9 @@ function About() {
                   fontWeight='thin'
                   fontSize='48px'
                   mb='40px'
+                  textDecoration='underline'
+                  textDecorationColor='cyan'
+                  textUnderlineOffset='8px'
                 >
                   {item.heading}
                 </Text>
