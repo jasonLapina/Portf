@@ -91,7 +91,7 @@ function Hero() {
             initial={{ opacity: 0, x: -120 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            filter='drop-shadow(2px 2px 4px cyan)'
+            filter='drop-shadow(2px 2px 8px cyan)'
           >
             DEVE
           </MotionBox>
@@ -99,7 +99,7 @@ function Hero() {
             initial={{ opacity: 0, x: 120 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            filter='drop-shadow(2px 2px 4px cyan)'
+            filter='drop-shadow(2px 2px 8px cyan)'
           >
             LOPER
           </MotionBox>
