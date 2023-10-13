@@ -60,15 +60,29 @@ function About() {
                 >
                   {isEven ? (
                     <>
-                      <Text fontSize='24px' px='40px'>
+                      <Text
+                        data-aos={i === 0 ? "fade-right" : ""}
+                        fontSize='24px'
+                        px='40px'
+                      >
                         {item.text}
                       </Text>
-                      <Image src={item.image} />
+                      <Image
+                        data-aos={i === 0 ? "fade-left" : ""}
+                        src={item.image}
+                      />
                     </>
                   ) : (
                     <>
-                      <Image src={item.image} />
-                      <Text fontSize='24px' px='40px'>
+                      <Image
+                        data-aos={i === 0 ? "fade-right" : ""}
+                        src={item.image}
+                      />
+                      <Text
+                        data-aos={i === 0 ? "fade-left" : ""}
+                        fontSize='24px'
+                        px='40px'
+                      >
                         {item.text}
                       </Text>
                     </>

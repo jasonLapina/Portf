@@ -1,4 +1,4 @@
-import { Box, Button, Center, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
@@ -74,6 +74,12 @@ function Hero() {
         pos='absolute'
         zIndex='-1'
         fontSize='20vw'
+        as={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{ duration: 100 }}
       >
         DEVELOPER
       </Text>
