@@ -1,43 +1,64 @@
 import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import MotionBox from "./UI/MotionBox";
 
 function Hero() {
   const [showActions, setShowActions] = useState(false);
+  const [showTypewriter, setShowTypewriter] = useState(false);
 
   const [text] = useTypewriter({
-    words: ["Hi, I'm Jason!", "Web Developer", "Get to know me!"],
+    words: ["easteregg", "Hi, I'm Jason!", "Web Developer", "Get to know me!"],
     loop: 1,
     onLoopDone: () => setShowActions(true),
   });
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowTypewriter(true);
+    }, 2900);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Center pos='relative' w='100vw' h='100vh'>
-      <Box
-        pos='absolute'
-        bottom='25%'
-        left='50%'
-        fontSize='64px'
-        zIndex='2'
-        transform='translateX(-50%)'
-      >
-        <Text filter='drop-shadow(1px 1px 4px white)' as='span'>
-          {text}
-        </Text>
-        <Cursor cursorBlinking cursorStyle='_' cursorColor='coral' />
-        <Text opacity='0' pointerEvents='none' lineHeight='0'>
-          Get to know me!
-        </Text>
-      </Box>
+      {showTypewriter && (
+        <Box
+          pos='absolute'
+          bottom='25%'
+          left='50%'
+          fontSize='64px'
+          zIndex='2'
+          transform='translateX(-50%)'
+        >
+          <Text filter='drop-shadow(1px 1px 4px white)' as='span'>
+            {text}
+          </Text>
+          <Cursor cursorBlinking cursorStyle='_' cursorColor='coral' />
+          <Text opacity='0' pointerEvents='none' lineHeight='0'>
+            Get to know me!
+          </Text>
+        </Box>
+      )}
       {showActions && (
-        <HStack
+        <MotionBox
+          display='flex'
           pos='absolute'
           bottom='25%'
           transform='translate(-50%, 40px)'
           left='50%'
           gap='16px'
           justify='center'
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+          }}
         >
           <Button
             _hover={{
@@ -61,18 +82,30 @@ function Hero() {
           >
             Projects
           </Button>
-        </HStack>
+        </MotionBox>
       )}
-      <Text
-        filter='drop-shadow(2px 2px 4px cyan)'
-        fontWeight='thin'
-        pos='absolute'
-        zIndex='-1'
-        fontSize='20vw'
-      >
-        DEVELOPER
+      <Text fontWeight='thin' pos='absolute' zIndex='-1' fontSize='19.5vw'>
+        <HStack>
+          <MotionBox
+            initial={{ opacity: 0, x: -120 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            filter='drop-shadow(2px 2px 4px cyan)'
+          >
+            DEVE
+          </MotionBox>
+          <MotionBox
+            initial={{ opacity: 0, x: 120 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            filter='drop-shadow(2px 2px 4px cyan)'
+          >
+            LOPER
+          </MotionBox>
+        </HStack>
       </Text>
-      <Box
+
+      <MotionBox
         h='90%'
         aspectRatio='1/1'
         bgPos='center'
@@ -82,14 +115,16 @@ function Hero() {
           "linear-gradient(to bottom, rgba(245,245,245,0), rgba(245,245,245,.4)), url('/assets/hero-me.png')"
         }
         borderRadius='full'
+        initial={{
+          opacity: 0,
+          y: -120,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 1, delay: 0.8 }}
       />
-      {/* <Image
-        boxShadow='2px 2px 16px black'
-        h='90%'
-        borderRadius='full'
-        pos='absolute'
-        src='/assets/hero-me.png'
-      /> */}
     </Center>
   );
 }
