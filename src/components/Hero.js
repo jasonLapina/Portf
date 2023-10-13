@@ -36,11 +36,6 @@ function Hero() {
           bottom='25%'
           transform='translate(-50%, 40px)'
           left='50%'
-          as={motion.div}
-          initial={{
-            opacity: 0,
-          }}
-          animate={{ opacity: 1 }}
           gap='16px'
           justify='center'
         >
@@ -74,12 +69,6 @@ function Hero() {
         pos='absolute'
         zIndex='-1'
         fontSize='20vw'
-        as={motion.div}
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: 1,
-        }}
-        transition={{ duration: 100 }}
       >
         DEVELOPER
       </Text>
