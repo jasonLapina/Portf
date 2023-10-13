@@ -119,9 +119,7 @@ const NextArr = ({ onClick }) => {
       p='24px'
       borderColor='coral'
       borderWidth='2px'
-      _hover={{
-        color: "coral",
-      }}
+      color='coral'
     >
       <ArrowForwardIcon />
     </Button>
@@ -142,9 +140,7 @@ const PrevArr = ({ onClick }) => {
       p='24px'
       borderColor='coral'
       borderWidth='2px'
-      _hover={{
-        color: "coral",
-      }}
+      color='coral'
     >
       <ArrowBackIcon />
     </Button>

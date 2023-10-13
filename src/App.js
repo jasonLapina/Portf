@@ -21,7 +21,7 @@ function App() {
     });
   }, []);
   return (
-    <Box pb='40px' overflowX='hidden'>
+    <Box pb='40px' bgColor='#28282B' color='white' overflowX='hidden'>
       <Hero />
       <About />
       <Skills />

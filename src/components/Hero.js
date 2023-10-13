@@ -1,5 +1,4 @@
 import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import MotionBox from "./UI/MotionBox";
@@ -29,7 +28,7 @@ function Hero() {
           bottom='25%'
           left='50%'
           fontSize='64px'
-          zIndex='2'
+          zIndex={3}
           transform='translateX(-50%)'
         >
           <Text filter='drop-shadow(1px 1px 4px white)' as='span'>
@@ -43,6 +42,7 @@ function Hero() {
       )}
       {showActions && (
         <MotionBox
+          zIndex={3}
           display='flex'
           pos='absolute'
           bottom='25%'
@@ -62,7 +62,7 @@ function Hero() {
         >
           <Button
             _hover={{
-              filter: "brightness(1.3)",
+              color: "black",
             }}
             boxShadow='2px 2px 4px gray'
             color='white'
@@ -73,18 +73,19 @@ function Hero() {
           </Button>
           <Button
             _hover={{
-              filter: "brightness(1.3)",
+              color: "black",
             }}
             boxShadow='2px 2px 4px gray'
             variant='outline'
             borderColor='coral'
             transition='all .4s'
+            color='white'
           >
             Projects
           </Button>
         </MotionBox>
       )}
-      <Text fontWeight='thin' pos='absolute' zIndex='-1' fontSize='19.5vw'>
+      <Text fontWeight='thin' pos='absolute' fontSize='19.5vw'>
         <HStack>
           <MotionBox
             initial={{ opacity: 0, x: -120 }}
@@ -111,8 +112,9 @@ function Hero() {
         bgPos='center'
         bgSize='cover'
         bgRepeat='no-repeat'
+        zIndex={2}
         bgImage={
-          "linear-gradient(to bottom, rgba(245,245,245,0), rgba(245,245,245,.4)), url('/assets/hero-me.png')"
+          "linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.4)), url('/assets/hero-me.png')"
         }
         borderRadius='full'
         initial={{
