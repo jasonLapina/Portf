@@ -1,10 +1,9 @@
-import { Box, Button, Grid, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Grid, Image, Text } from "@chakra-ui/react";
 import MySection from "./UI/MySection";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Typewriter } from "react-simple-typewriter";
 import MyTypewriter from "./UI/MyTypewriter";
 
-function Projects() {
+export function Projects() {
   const projs = [
     {
       title: "Leaderbored",
@@ -54,8 +53,7 @@ function Projects() {
                 role='group'
                 cursor='pointer'
                 maxH={i === 0 ? "560px" : ""}
-                // filter='drop-shadow(4px 4px 16px cyan)'
-                boxShadow='4px 0px 16px cyan'
+                filter='drop-shadow(4px 4px 16px cyan)'
               >
                 <Box
                   color='white'
@@ -123,5 +121,3 @@ function Projects() {
     </Box>
   );
 }
-
-export default Projects;

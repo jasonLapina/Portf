@@ -4,4 +4,11 @@
 
 .slick-dots li.slick-active button:before {
   color: coral;
+  opacity: 1;
+}
+
+.slick-dots li button:before {
+  color: white;
+  opacity: 0.4;
+  font-size: 12px;
 }

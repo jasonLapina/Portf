@@ -62,7 +62,7 @@ function Hero() {
         >
           <Button
             _hover={{
-              color: "black",
+              filter: "drop-shadow(2px 2px 8px cyan)",
             }}
             boxShadow='2px 2px 4px gray'
             color='white'
@@ -73,7 +73,7 @@ function Hero() {
           </Button>
           <Button
             _hover={{
-              color: "black",
+              filter: "drop-shadow(2px 2px 8px cyan)",
             }}
             boxShadow='2px 2px 4px gray'
             variant='outline'

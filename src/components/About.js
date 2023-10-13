@@ -41,11 +41,11 @@ function About() {
     <Box>
       <MySection heading={"aboutMe"}>
         <MyTypewriter words={["My info"]} />
-        <Box as={Slider} {...sliderSettings}>
+        <Box as={Slider} mb='80px' px='32px' py='16px' {...sliderSettings}>
           {details.map((item, i) => {
             const isEven = (i + 1) % 2 === 0;
             return (
-              <Box key={item.heading}>
+              <Box px='24px' key={item.heading}>
                 <Text
                   textAlign='center'
                   fontWeight='thin'
@@ -75,11 +75,13 @@ function About() {
                       <Image
                         data-aos={i === 0 ? "fade-left" : ""}
                         src={item.image}
+                        filter={"drop-shadow(2px 2px 8px cyan)"}
                       />
                     </>
                   ) : (
                     <>
                       <Image
+                        filter={"drop-shadow(2px 2px 8px cyan)"}
                         data-aos={i === 0 ? "fade-right" : ""}
                         src={item.image}
                       />
@@ -120,6 +122,10 @@ const NextArr = ({ onClick }) => {
       borderColor='coral'
       borderWidth='2px'
       color='coral'
+      transition='all .4s'
+      _hover={{
+        filter: "drop-shadow(2px 2px 8px coral)",
+      }}
     >
       <ArrowForwardIcon />
     </Button>
@@ -128,6 +134,10 @@ const NextArr = ({ onClick }) => {
 const PrevArr = ({ onClick }) => {
   return (
     <Button
+      transition='all .4s'
+      _hover={{
+        filter: "drop-shadow(2px 2px 8px coral)",
+      }}
       onClick={onClick}
       pos='absolute'
       top='50%'
