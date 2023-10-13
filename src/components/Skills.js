@@ -1,4 +1,4 @@
-import { Box, Center, Heading, Image, Text, Tooltip } from "@chakra-ui/react";
+import { Box, Center, Heading, Image, Tooltip } from "@chakra-ui/react";
 import MySection from "./UI/MySection";
 import { Typewriter } from "react-simple-typewriter";
 function Skills() {
@@ -29,10 +29,17 @@ function Skills() {
           />
         </Heading>
         <Center pos='relative' h='100vh'>
-          <Image h='70%' src='/assets/skills-invo.png' borderRadius='full' />
+          <Image
+            data-aos='fade-up'
+            h='70%'
+            src='/assets/skills-invo.png'
+            borderRadius='full'
+          />
           {skills.map((item, i) => (
-            <Tooltip hasArrow label={item.label}>
+            <Tooltip key={i} hasArrow label={item.label}>
               <Image
+                data-aos='fade-in'
+                data-aos-delay='500'
                 w='80px'
                 key={item.icon}
                 src={item.icon}
@@ -41,7 +48,7 @@ function Skills() {
                   i * (360 / skills.length)
                 }deg) translateY(-350px) rotate(-${
                   i * (360 / skills.length)
-                }deg)`}
+                }deg) !important`}
                 filter={`drop-shadow(4px 4px 4px cyan)`}
               />
             </Tooltip>
