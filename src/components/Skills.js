@@ -37,9 +37,6 @@ function Skills() {
               }deg) translateY(-400px) rotate(-${
                 i * (360 / skills.length)
               }deg)`}
-              // filter={`drop-shadow(4px 4px 4px ${
-              //   i % 2 === 0 ? "cyan" : "coral"
-              // })`}
               filter={`drop-shadow(4px 4px 4px cyan)`}
             />
           ))}
@@ -50,17 +47,3 @@ function Skills() {
 }
 
 export default Skills;
-
-{
-  /* <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
-{images.map((src, index) => (
-  <Box
-    key={index}
-    position="absolute"
-    transform={`rotate(${index * (360 / images.length)}deg) translate(100px) rotate(-${index * (360 / images.length)}deg)`}
-  >
-    <img src={src} alt={`Image ${index}`} style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
-  </Box>
-))}
-</Box> */
-}
