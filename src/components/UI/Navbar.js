@@ -9,6 +9,7 @@ import {
   BiSolidFolder,
   BiSolidPhone,
 } from "react-icons/bi";
+import MotionBox from "./MotionBox";
 function Navbar() {
   const sections = [
     { label: "Home", icon: BiSolidHome },
@@ -34,12 +35,12 @@ function Navbar() {
   };
 
   return (
-    <HStack
+    <MotionBox
+      display='flex'
       w='320px'
       pos='fixed'
       mx='auto'
       borderRadius='full'
-      bottom='40px'
       zIndex={5}
       left='50%'
       bgColor='blackAlpha.600'
@@ -50,6 +51,15 @@ function Navbar() {
       py='20px'
       gap='16px'
       justify='center'
+      initial={{ opacity: 0, bottom: "-80px" }}
+      animate={{
+        opacity: 1,
+        bottom: "40px",
+      }}
+      transition={{
+        duration: 1,
+        delay: 1.2,
+      }}
     >
       {sections.map((item) => (
         <Tooltip
@@ -64,7 +74,7 @@ function Navbar() {
           </CustomCard>
         </Tooltip>
       ))}
-    </HStack>
+    </MotionBox>
   );
 }
 
