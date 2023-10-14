@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HStack, Icon, Tooltip, Box, Tag } from "@chakra-ui/react";
+import { HStack, Icon, Tooltip, Box, Tag, Button } from "@chakra-ui/react";
 
 import {
   BiSolidUser,
@@ -10,6 +10,7 @@ import {
   BiSolidPhone,
 } from "react-icons/bi";
 import MotionBox from "./MotionBox";
+import { DownloadIcon } from "@chakra-ui/icons";
 function Navbar() {
   const sections = [
     { label: "Home", icon: BiSolidHome },
@@ -37,7 +38,8 @@ function Navbar() {
   return (
     <MotionBox
       display='flex'
-      w='320px'
+      alignItems='center'
+      w='fit-content'
       pos='fixed'
       mx='auto'
       borderRadius='full'
@@ -68,12 +70,24 @@ function Navbar() {
           placement='top'
           label={item.label}
           hasArrow
+          key={item.label}
         >
           <CustomCard onClick={() => handleNav(item.label)} cursor='pointer'>
             <Icon fontSize='24px' color='coral' as={item.icon} />
           </CustomCard>
         </Tooltip>
       ))}
+      <Tooltip
+        fontSize='16px'
+        arrowSize='15'
+        placement='top'
+        label={"Download resume"}
+        hasArrow
+      >
+        <Box download href='Jason Lapina - Resume.pdf' as='a'>
+          <DownloadIcon fontSize='24px' color='coral' />
+        </Box>
+      </Tooltip>
     </MotionBox>
   );
 }
