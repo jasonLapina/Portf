@@ -21,7 +21,7 @@ function Hero() {
   }, []);
 
   return (
-    <Center pos='relative' w='100vw' h='100vh'>
+    <Center id='Home' pos='relative' w='100vw' h='100vh'>
       {showTypewriter && (
         <Box
           pos='absolute'

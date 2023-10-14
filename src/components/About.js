@@ -38,7 +38,7 @@ function About() {
   };
 
   return (
-    <Box>
+    <Box id='About'>
       <MySection heading={"aboutMe"}>
         <MyTypewriter words={["My info"]} />
         <Box as={Slider} mb='80px' px='32px' py='16px' {...sliderSettings}>

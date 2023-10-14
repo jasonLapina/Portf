@@ -41,7 +41,7 @@ function Projects() {
     },
   ];
   return (
-    <Box>
+    <Box id='Projects'>
       <MySection heading='projects'>
         <MyTypewriter words={["Featured Projects"]} />
 

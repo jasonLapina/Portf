@@ -29,6 +29,10 @@ function Navbar() {
       icon: BiSolidPhone,
     },
   ];
+  const handleNav = (section) => {
+    document.getElementById(section).scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <HStack
       w='320px'
@@ -55,7 +59,7 @@ function Navbar() {
           label={item.label}
           hasArrow
         >
-          <CustomCard cursor='pointer'>
+          <CustomCard onClick={() => handleNav(item.label)} cursor='pointer'>
             <Icon fontSize='24px' color='coral' as={item.icon} />
           </CustomCard>
         </Tooltip>

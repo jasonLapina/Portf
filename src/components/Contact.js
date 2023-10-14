@@ -5,10 +5,9 @@ import { BsLinkedin } from "react-icons/bs";
 import { BiLogoGmail } from "react-icons/bi";
 function Contact() {
   return (
-    <Box>
+    <Box id='Contact'>
       <MySection heading='contacts'>
         <MyTypewriter words={["You can reach me @:"]} />
-
         <Box
           w='800px'
           h='600px'

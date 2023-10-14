@@ -19,7 +19,7 @@ function Skills() {
   ];
 
   return (
-    <Box>
+    <Box id='Skills'>
       <MySection heading='skills'>
         <MyTypewriter words={["My tech stack"]} />
         <Center pos='relative' h='100vh'>
