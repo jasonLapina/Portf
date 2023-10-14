@@ -85,7 +85,7 @@ function Hero() {
           </Button>
         </MotionBox>
       )}
-      <Text fontWeight='thin' pos='absolute' fontSize='19.5vw'>
+      <Box fontWeight='thin' pos='absolute' fontSize='19.5vw'>
         <HStack>
           <MotionBox
             initial={{ opacity: 0, x: -120 }}
@@ -104,7 +104,7 @@ function Hero() {
             LOPER
           </MotionBox>
         </HStack>
-      </Text>
+      </Box>
 
       <MotionBox
         h='90%'

@@ -11,6 +11,7 @@ import About from "./components/About";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Navbar from "./components/UI/Navbar";
 
 function App() {
   useEffect(() => {
@@ -21,13 +22,16 @@ function App() {
     });
   }, []);
   return (
-    <Box pb='40px' bgColor='#28282B' color='white' overflowX='hidden'>
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-    </Box>
+    <>
+      <Box color='white' bgColor='#28282B' overflowX='hidden' pb='40px'>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </Box>
+      <Navbar />
+    </>
   );
 }
 
