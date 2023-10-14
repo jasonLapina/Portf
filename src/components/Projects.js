@@ -19,32 +19,31 @@ function Projects() {
       title: "Taktyl Studios",
       text: "Taktyl Studios Inc.'s website",
       image: ["/assets/projs/taktyl.png", "/assets/projs/taktyl2.png"],
-      link: "https://leaderbored.gg",
+      link: "https://taktylstudios.com/",
     },
     {
       title: "NomNom",
       text: "Food browsing app, personal project",
       image: ["/assets/projs/nomnom1.png", "/assets/projs/nomnom2.png"],
-      link: "https://leaderbored.gg",
+      link: "https://nomnom-zeta.vercel.app/",
     },
     {
       title: "JMG Writes",
       text: "Copywriter's website, personal project",
       image: ["/assets/projs/jmg1.png", "/assets/projs/jmg2.png"],
-      link: "https://leaderbored.gg",
+      link: "https://jmg-writes.vercel.app/",
     },
     {
       title: "AYO 2023",
       text: "Event booking website for our client",
       image: ["/assets/projs/ayo1.png", "/assets/projs/ayo2.png"],
-      link: "https://leaderbored.gg",
+      link: "https://www.sikapphilippines.org/ayo2023",
     },
   ];
   return (
     <Box id='Projects'>
       <MySection heading='projects'>
         <MyTypewriter words={["Featured Projects"]} />
-
         <Grid
           // gridTemplateColumns='repeat(auto-fit, minmax(400px,1fr))'
           gridTemplateColumns='1fr 1fr'
@@ -55,7 +54,7 @@ function Projects() {
           mx='auto'
         >
           {projs.map((item, i) => {
-            const { title, text, image } = item;
+            const { title, text, image, link } = item;
             return (
               <Box
                 overflow='hidden'
@@ -68,6 +67,10 @@ function Projects() {
                 maxH={i === 0 ? "560px" : ""}
                 // filter='drop-shadow(4px 4px 16px cyan)'
                 boxShadow='4px 0px 16px cyan'
+                as='a'
+                href={link}
+                target='_blank'
+                rel='noreferrer'
               >
                 <Box
                   color='white'
