@@ -1,8 +1,16 @@
-import { Box, Button, Grid, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Grid,
+  Image,
+  Text,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import MySection from "./UI/MySection";
 import Slider from "react-slick";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import MyTypewriter from "./UI/MyTypewriter";
+
 function About() {
   const details = [
     {
@@ -36,69 +44,92 @@ function About() {
     nextArrow: <NextArr />,
     prevArrow: <PrevArr />,
   };
+  const smallSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+
+  const [isMD] = useMediaQuery("(min-width: 768px)");
 
   return (
     <Box id='About'>
       <MySection heading={"aboutMe"}>
         <MyTypewriter words={["My info"]} />
-        <Box as={Slider} mb='80px' px='32px' py='16px' {...sliderSettings}>
-          {details.map((item, i) => {
-            const isEven = (i + 1) % 2 === 0;
-            return (
-              <Box px='24px' key={item.heading}>
-                <Text
-                  textAlign='center'
-                  fontWeight='thin'
-                  fontSize='48px'
-                  mb='40px'
-                  textDecoration='underline'
-                  textDecorationColor='cyan'
-                  textUnderlineOffset='8px'
-                >
-                  {item.heading}
-                </Text>
-                <Grid
-                  alignItems='center'
-                  justifyContent='center'
-                  justifyItems='center'
-                  gridTemplateColumns={isEven ? "6fr 4fr" : "4fr 6fr"}
-                >
-                  {isEven ? (
-                    <>
-                      <Text
-                        data-aos={i === 0 ? "fade-right" : ""}
-                        fontSize='24px'
-                        px='40px'
-                      >
-                        {item.text}
-                      </Text>
-                      <Image
-                        data-aos={i === 0 ? "fade-left" : ""}
-                        src={item.image}
-                        filter={"drop-shadow(2px 2px 8px cyan)"}
-                      />
-                    </>
-                  ) : (
-                    <>
-                      <Image
-                        filter={"drop-shadow(2px 2px 8px cyan)"}
-                        data-aos={i === 0 ? "fade-right" : ""}
-                        src={item.image}
-                      />
-                      <Text
-                        data-aos={i === 0 ? "fade-left" : ""}
-                        fontSize='24px'
-                        px='40px'
-                      >
-                        {item.text}
-                      </Text>
-                    </>
-                  )}
-                </Grid>
-              </Box>
-            );
-          })}
-        </Box>
+
+        {/* FOR SMALLER SCREENS */}
+        {!isMD && (
+          <Box as={Slider} {...smallSettings}>
+            {details.map((item) => (
+              <Text px='8px'>{item.text}</Text>
+            ))}
+          </Box>
+        )}
+
+        {/* FOR LARGE SCREENS */}
+        {isMD && (
+          <Box as={Slider} mb='80px' px='32px' py='16px' {...sliderSettings}>
+            {details.map((item, i) => {
+              const isEven = (i + 1) % 2 === 0;
+              return (
+                <Box px='24px' key={item.heading}>
+                  <Text
+                    textAlign='center'
+                    fontWeight='thin'
+                    fontSize='48px'
+                    mb='40px'
+                    textDecoration='underline'
+                    textDecorationColor='cyan'
+                    textUnderlineOffset='8px'
+                  >
+                    {item.heading}
+                  </Text>
+                  <Grid
+                    alignItems='center'
+                    justifyContent='center'
+                    justifyItems='center'
+                    gridTemplateColumns={isEven ? "6fr 4fr" : "4fr 6fr"}
+                  >
+                    {isEven ? (
+                      <>
+                        <Text
+                          data-aos={i === 0 ? "fade-right" : ""}
+                          fontSize='24px'
+                          px='40px'
+                        >
+                          {item.text}
+                        </Text>
+                        <Image
+                          data-aos={i === 0 ? "fade-left" : ""}
+                          src={item.image}
+                          filter={"drop-shadow(2px 2px 8px cyan)"}
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <Image
+                          filter={"drop-shadow(2px 2px 8px cyan)"}
+                          data-aos={i === 0 ? "fade-right" : ""}
+                          src={item.image}
+                        />
+                        <Text
+                          data-aos={i === 0 ? "fade-left" : ""}
+                          fontSize='24px'
+                          px='40px'
+                        >
+                          {item.text}
+                        </Text>
+                      </>
+                    )}
+                  </Grid>
+                </Box>
+              );
+            })}
+          </Box>
+        )}
       </MySection>
     </Box>
   );
@@ -109,11 +140,13 @@ export default About;
 const NextArr = ({ onClick }) => {
   return (
     <Button
+      opacity={{ base: 0, md: 1 }}
+      pointerEvents={{ base: "none", md: "auto" }}
+      right='-56px'
       onClick={onClick}
       pos='absolute'
       top='50%'
       translateY='-50%'
-      right='-56px'
       borderRadius='full'
       variant='outline'
       fontSize='32px'
@@ -134,6 +167,9 @@ const NextArr = ({ onClick }) => {
 const PrevArr = ({ onClick }) => {
   return (
     <Button
+      opacity={{ base: 0, md: 1 }}
+      pointerEvents={{ base: "none", md: "auto" }}
+      left='-56px'
       transition='all .4s'
       _hover={{
         filter: "drop-shadow(2px 2px 8px coral)",
@@ -142,7 +178,6 @@ const PrevArr = ({ onClick }) => {
       pos='absolute'
       top='50%'
       translateY='-50%'
-      left='-56px'
       borderRadius='full'
       variant='outline'
       fontSize='32px'

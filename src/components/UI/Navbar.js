@@ -49,7 +49,7 @@ function Navbar() {
       transform='translateX(-50%)'
       backdropFilter='auto'
       backdropBlur='8px'
-      px='40px'
+      px={{ md: "40px", base: "20px" }}
       py='20px'
       gap='16px'
       justify='center'

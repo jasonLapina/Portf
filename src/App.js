@@ -24,7 +24,7 @@ function App() {
   }, []);
   return (
     <>
-      <Box color='white' bgColor='#28282B' overflowX='hidden'>
+      <Box color='white' bgColor='#28282B'>
         <Hero />
         <About />
         <Skills />
