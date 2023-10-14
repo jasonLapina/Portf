@@ -7,22 +7,22 @@ function About() {
   const details = [
     {
       heading: "Summary",
-      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea assumenda quasi aperiam facere ipsum porro repudiandae? Molestias beatae odit atque neque suscipit autem magnam. Doloremque alias modi minus est amet!",
+      text: "I'm Jason Alexander Lapina, an experienced self-taught web developer. My professional experience has allowed me to not only hone the skills I already have but to also expand my tech stack. I spend most of my time either coding or learning new things.",
       image: "/assets/about-me.svg",
     },
     {
       heading: "Experience",
-      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea assumenda quasi aperiam facere ipsum porro repudiandae? Molestias beatae odit atque neque suscipit autem magnam. Doloremque alias modi minus est amet!",
+      text: "Over the course of a year, I have had the privilege of contributing to and leading diverse projects, utilizing a range of technologies. Prior to my professional experience, I dedicated significant time to crafting personal projects and refining my coding skills.",
       image: "/assets/about-work.svg",
     },
     {
       heading: "Education",
-      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea assumenda quasi aperiam facere ipsum porro repudiandae? Molestias beatae odit atque neque suscipit autem magnam. Doloremque alias modi minus est amet!",
+      text: "I took STEM (Science, Technology, Engineering, & Mathematics) in Senior High School then studied Agricultural and Applied Economics at the University of the Philippines. I've since developed a strong passion for programming and self-studied web development via online courses. My certifications are available upon request.",
       image: "/assets/about-educ.svg",
     },
     {
       heading: "Personal",
-      text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea assumenda quasi aperiam facere ipsum porro repudiandae? Molestias beatae odit atque neque suscipit autem magnam. Doloremque alias modi minus est amet!",
+      text: "When I'm not coding or learning something new about tech, I usually watch a movie/series. I'm currently invested in the anime One Piece. I also play a variety of video games, mostly online-competitive games and single-player games.",
       image: "/assets/about-personal.svg",
     },
   ];
