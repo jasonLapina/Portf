@@ -22,13 +22,13 @@ function Skills() {
     <Box id='Skills'>
       <MySection heading='skills'>
         <MyTypewriter words={["My tech stack"]} />
-        <Center pos='relative' h='100vh'>
+        <Center pos='relative' my='80px'>
           <Image
             data-aos='fade-up'
-            h='70%'
             src='/assets/skills-invo.png'
             borderRadius='full'
             filter={`drop-shadow(2px 2px 20px coral)`}
+            maxW='1000px'
           />
           {skills.map((item, i) => (
             <Tooltip key={i} hasArrow label={item.label}>
@@ -41,7 +41,7 @@ function Skills() {
                 pos='absolute'
                 transform={`rotate(${
                   i * (360 / skills.length)
-                }deg) translateY(-350px) rotate(-${
+                }deg) translateY(-280px) rotate(-${
                   i * (360 / skills.length)
                 }deg) !important`}
                 filter={`drop-shadow(2px 2px 8px cyan)`}

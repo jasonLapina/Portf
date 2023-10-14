@@ -12,6 +12,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Navbar from "./components/UI/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   useEffect(() => {
@@ -23,12 +24,13 @@ function App() {
   }, []);
   return (
     <>
-      <Box color='white' bgColor='#28282B' overflowX='hidden' pb='40px'>
+      <Box color='white' bgColor='#28282B' overflowX='hidden'>
         <Hero />
         <About />
         <Skills />
         <Projects />
         <Contact />
+        <Footer />
       </Box>
       <Navbar />
     </>
