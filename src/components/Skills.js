@@ -28,22 +28,29 @@ function Skills() {
             src='/assets/skills-invo.png'
             borderRadius='full'
             filter={`drop-shadow(2px 2px 20px coral)`}
-            maxW='1000px'
+            maxW={{ base: "400px", md: "1000px" }}
           />
           {skills.map((item, i) => (
             <Tooltip key={i} hasArrow label={item.label}>
               <Image
                 data-aos='fade-in'
                 data-aos-delay='500'
-                w='80px'
+                w={{ base: "40px", md: "80px" }}
                 key={item.icon}
                 src={item.icon}
                 pos='absolute'
-                transform={`rotate(${
-                  i * (360 / skills.length)
-                }deg) translateY(-280px) rotate(-${
-                  i * (360 / skills.length)
-                }deg) !important`}
+                transform={{
+                  md: `rotate(${
+                    i * (360 / skills.length)
+                  }deg) translateY(-280px) rotate(-${
+                    i * (360 / skills.length)
+                  }deg) !important`,
+                  base: `rotate(${
+                    i * (360 / skills.length)
+                  }deg) translateY(-140px) rotate(-${
+                    i * (360 / skills.length)
+                  }deg) !important`,
+                }}
                 filter={`drop-shadow(2px 2px 8px cyan)`}
               />
             </Tooltip>

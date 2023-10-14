@@ -18,6 +18,7 @@ function MyTypewriter(props) {
         textAlign='center'
         left='50%'
         transform='translateX(-50%)'
+        w='100%'
       >
         {inView && (
           <Typewriter

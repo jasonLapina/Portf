@@ -25,9 +25,9 @@ function Hero() {
       {showTypewriter && (
         <Box
           pos='absolute'
-          bottom='25%'
+          bottom={{ base: "28%", md: "25%" }}
           left='50%'
-          fontSize='64px'
+          fontSize={{ base: "24px", md: "48px" }}
           zIndex={3}
           transform='translateX(-50%)'
         >
@@ -107,7 +107,8 @@ function Hero() {
       </Box>
 
       <MotionBox
-        h='90%'
+        h={{ md: "90%", base: "30%" }}
+        maxH='800px'
         aspectRatio='1/1'
         bgPos='center'
         bgSize='cover'
