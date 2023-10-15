@@ -8,8 +8,14 @@ function Hero() {
   const [showTypewriter, setShowTypewriter] = useState(false);
 
   const [text] = useTypewriter({
-    words: ["easteregg", "Hi, I'm Jason!", "Web Developer", "Get to know me!"],
+    words: [
+      "           ",
+      "Hi, I'm Jason!",
+      "Web Developer",
+      "Get to know me!",
+    ],
     loop: 1,
+    typeSpeed: 50,
     onLoopDone: () => setShowActions(true),
   });
 
