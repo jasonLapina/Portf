@@ -25,7 +25,9 @@ function App() {
   return (
     <>
       <Box overflowX='hidden' color='white' bgColor='#28282B'>
-        <Hero />
+        <Box mb='120px'>
+          <Hero />
+        </Box>
         <About />
         <Skills />
         <Projects />
