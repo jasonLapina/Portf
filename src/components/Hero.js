@@ -20,6 +20,10 @@ function Hero() {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleClick = (section) => {
+    document.getElementById(section).scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <Center id='Home' pos='relative' h='100vh'>
       {showTypewriter && (
@@ -68,6 +72,7 @@ function Hero() {
             color='white'
             bgColor='coral'
             transition='all .4s'
+            onClick={() => handleClick("Contact")}
           >
             Contact
           </Button>
@@ -80,6 +85,7 @@ function Hero() {
             borderColor='coral'
             transition='all .4s'
             color='white'
+            onClick={() => handleClick("Projects")}
           >
             Projects
           </Button>
