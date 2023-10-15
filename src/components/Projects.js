@@ -39,6 +39,12 @@ function Projects() {
       image: ["/assets/projs/ayo1.png", "/assets/projs/ayo2.png"],
       link: "https://www.sikapphilippines.org/ayo2023",
     },
+    {
+      title: "LapsFlix",
+      text: "Movie/Series browsing app",
+      image: ["/assets/projs/lapsflix.png", "/assets/projs/lapsflix2.png"],
+      link: "https://lapsflix-v3.vercel.app/",
+    },
   ];
   return (
     <Box id='Projects'>
