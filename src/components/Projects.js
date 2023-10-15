@@ -110,7 +110,7 @@ function Projects() {
                 </Box>
                 <Box pos='relative'>
                   <Image
-                    h='100%'
+                    h={{ base: "auto", md: "100%" }}
                     src={image[0]}
                     loading='lazy'
                     transition='all .4s'
@@ -119,6 +119,7 @@ function Projects() {
                     }}
                   />
                   <Image
+                    h={{ base: "auto", md: "100%" }}
                     src={image[1]}
                     loading='lazy'
                     opacity='0'
