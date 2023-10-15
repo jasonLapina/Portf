@@ -59,7 +59,6 @@ function About() {
     <Box id='About'>
       <MySection heading={"aboutMe"}>
         <MyTypewriter words={["My info"]} />
-
         {/* FOR SMALLER SCREENS */}
         {!isMD && (
           <Box as={Slider} {...smallSettings}>
@@ -71,7 +70,14 @@ function About() {
 
         {/* FOR LARGE SCREENS */}
         {isMD && (
-          <Box as={Slider} mb='80px' px='32px' py='16px' {...sliderSettings}>
+          <Box
+            as={Slider}
+            // overflowX='hidden'
+            mb='80px'
+            // px='32px'
+            // py='16px'
+            {...sliderSettings}
+          >
             {details.map((item, i) => {
               const isEven = (i + 1) % 2 === 0;
               return (
@@ -142,7 +148,7 @@ const NextArr = ({ onClick }) => {
     <Button
       opacity={{ base: 0, md: 1 }}
       pointerEvents={{ base: "none", md: "auto" }}
-      right='-56px'
+      right='8px'
       onClick={onClick}
       pos='absolute'
       top='50%'
@@ -169,7 +175,7 @@ const PrevArr = ({ onClick }) => {
     <Button
       opacity={{ base: 0, md: 1 }}
       pointerEvents={{ base: "none", md: "auto" }}
-      left='-56px'
+      left='8px'
       transition='all .4s'
       _hover={{
         filter: "drop-shadow(2px 2px 8px coral)",

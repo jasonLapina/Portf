@@ -85,7 +85,11 @@ function Hero() {
           </Button>
         </MotionBox>
       )}
-      <Box fontWeight='thin' pos='absolute' fontSize='19.5vw'>
+      <Box
+        fontWeight='thin'
+        pos='absolute'
+        fontSize={{ base: "18vw", md: "19.5vw" }}
+      >
         <HStack>
           <MotionBox
             initial={{ opacity: 0, x: -120 }}
