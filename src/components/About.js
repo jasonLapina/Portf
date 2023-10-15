@@ -25,7 +25,7 @@ function About() {
     },
     {
       heading: "Education",
-      text: "I took STEM (Science, Technology, Engineering, & Mathematics) in Senior High School then studied Agricultural and Applied Economics at the University of the Philippines. I've since developed a strong passion for programming and self-studied web development via online courses. My certifications are available upon request.",
+      text: "I studied Agricultural and Applied Economics at the University of the Philippines. I've since developed a strong passion for programming and self-studied, not only web development, but also I.T. and AWS via online courses. My certifications are available upon request.",
       image: "/assets/about-educ.svg",
     },
     {
