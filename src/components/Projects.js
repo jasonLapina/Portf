@@ -28,6 +28,12 @@ function Projects() {
       link: "https://nomnom-zeta.vercel.app/",
     },
     {
+      title: "LapsFlix",
+      text: "Movie/Series browsing app",
+      image: ["/assets/projs/lapsflix.png", "/assets/projs/lapsflix2.png"],
+      link: "https://lapsflix-v3.vercel.app/",
+    },
+    {
       title: "JMG Writes",
       text: "Copywriter's website, personal project",
       image: ["/assets/projs/jmg1.png", "/assets/projs/jmg2.png"],
@@ -38,12 +44,6 @@ function Projects() {
       text: "Event booking website for our client",
       image: ["/assets/projs/ayo1.png", "/assets/projs/ayo2.png"],
       link: "https://www.sikapphilippines.org/ayo2023",
-    },
-    {
-      title: "LapsFlix",
-      text: "Movie/Series browsing app",
-      image: ["/assets/projs/lapsflix.png", "/assets/projs/lapsflix2.png"],
-      link: "https://lapsflix-v3.vercel.app/",
     },
   ];
   return (
