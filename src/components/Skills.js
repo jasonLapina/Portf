@@ -28,7 +28,7 @@ function Skills() {
             src='/assets/skills-invo.png'
             borderRadius='full'
             filter={`drop-shadow(2px 2px 20px coral)`}
-            maxW={{ base: "400px", md: "1000px" }}
+            maxW={{ base: "400px", md: "700px", lg: "1000px" }}
           />
           {skills.map((item, i) => (
             <Tooltip key={i} hasArrow label={item.label}>
