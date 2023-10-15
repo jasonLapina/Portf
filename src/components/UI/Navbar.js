@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HStack, Icon, Tooltip, Box, Tag, Button } from "@chakra-ui/react";
+import { Icon, Tooltip, Box, Tag } from "@chakra-ui/react";
 
 import {
   BiSolidUser,

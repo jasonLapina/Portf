@@ -173,6 +173,7 @@ const NextArr = ({ onClick }) => {
 const PrevArr = ({ onClick }) => {
   return (
     <Button
+      zIndex={5}
       opacity={{ base: 0, md: 1 }}
       pointerEvents={{ base: "none", md: "auto" }}
       left='8px'
