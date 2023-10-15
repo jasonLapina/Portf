@@ -18,36 +18,38 @@ function Contact() {
           pos='relative'
           mx='auto'
         >
-          <HStack gap='40px' justify='center'>
-            <a
-              href='https://www.linkedin.com/in/dev-jason/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <Icon
-                as={BsLinkedin}
-                fontSize='80px'
-                borderRadius='full'
-                color='linkedin.500'
-                bgColor='white'
-                filter='drop-shadow(2px 2px 80px coral)'
-              />
-            </a>
-            <a
-              href='https://www.linkedin.com/in/dev-jason/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <Icon
-                as={BiLogoGmail}
-                fontSize='80px'
-                borderRadius='full'
-                color='red.500'
-                bgColor='white'
-                filter='drop-shadow(2px 2px 80px coral)'
-              />
-            </a>
-          </HStack>
+          {!isMD && (
+            <HStack gap='40px' justify='center'>
+              <a
+                href='https://www.linkedin.com/in/dev-jason/'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <Icon
+                  as={BsLinkedin}
+                  fontSize='80px'
+                  borderRadius='full'
+                  color='linkedin.500'
+                  bgColor='white'
+                  filter='drop-shadow(2px 2px 80px coral)'
+                />
+              </a>
+              <a
+                href='https://www.linkedin.com/in/dev-jason/'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <Icon
+                  as={BiLogoGmail}
+                  fontSize='80px'
+                  borderRadius='full'
+                  color='red.500'
+                  bgColor='white'
+                  filter='drop-shadow(2px 2px 80px coral)'
+                />
+              </a>
+            </HStack>
+          )}
           {isMD && (
             <>
               <a
