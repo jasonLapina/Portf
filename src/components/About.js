@@ -63,7 +63,12 @@ function About() {
         {!isMD && (
           <Box as={Slider} {...smallSettings}>
             {details.map((item) => (
-              <Text px='8px'>{item.text}</Text>
+              <>
+                <Text textAlign='center' mb='16px' fontSize='32px'>
+                  {item.heading}
+                </Text>
+                <Text px='8px'>{item.text}</Text>
+              </>
             ))}
           </Box>
         )}

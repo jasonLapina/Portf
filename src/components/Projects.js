@@ -46,7 +46,7 @@ function Projects() {
         <MyTypewriter words={["Featured Projects"]} />
         <Grid
           // gridTemplateColumns='repeat(auto-fit, minmax(400px,1fr))'
-          gridTemplateColumns='1fr 1fr'
+          gridTemplateColumns={{ md: "1fr 1fr", base: "1fr" }}
           gap='24px'
           justifyContent='center'
           justifyItems='center'
