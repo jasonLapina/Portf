@@ -31,7 +31,12 @@ function Hero() {
   };
 
   return (
-    <Center id='Home' pos='relative' h='100vh'>
+    <Center
+      id='Home'
+      pos='relative'
+      h={{ base: "70vh", md: "100vh" }}
+      mb={{ base: "-120px" }}
+    >
       {showTypewriter && (
         <Box
           pos='absolute'
@@ -126,7 +131,6 @@ function Hero() {
         h={{ md: "90%", base: "30%" }}
         maxH='800px'
         aspectRatio='1/1'
-        bgPos='center'
         bgSize='cover'
         bgRepeat='no-repeat'
         zIndex={2}

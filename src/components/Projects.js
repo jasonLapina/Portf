@@ -119,7 +119,7 @@ function Projects() {
                     }}
                   />
                   <Image
-                    h={{ base: "auto", md: "100%" }}
+                    // h={{ base: "auto", md: "100%" }}
                     src={image[1]}
                     loading='lazy'
                     opacity='0'
