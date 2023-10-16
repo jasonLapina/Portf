@@ -15,6 +15,7 @@ import {
 import ReactGA from "react-ga4";
 import Blogs from "./pages/Blogs";
 import Layout from "./components/UI/Layout";
+import Memes from "./pages/Memes";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "blogs",
         element: <Blogs />,
+      },
+      {
+        path: "peter",
+        element: <Memes />,
       },
     ],
   },
