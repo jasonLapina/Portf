@@ -15,6 +15,7 @@ import Navbar from "./components/UI/Navbar";
 import Footer from "./components/Footer";
 
 import ReactGA from "react-ga4";
+import PageNav from "./components/UI/PageNav";
 
 ReactGA.send({ hitType: "pageview", page: "/", title: "Home page" });
 
@@ -28,16 +29,15 @@ function App() {
   }, []);
   return (
     <>
-      <Box overflowX='hidden' color='white' bgColor='#28282B'>
-        <Box mb='160px'>
-          <Hero />
-        </Box>
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-        <Footer />
+      {/* <PageNav /> */}
+      <Box mb='160px'>
+        <Hero />
       </Box>
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
       <Navbar />
     </>
   );
