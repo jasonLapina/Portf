@@ -86,7 +86,7 @@ function About() {
             {details.map((item, i) => {
               const isEven = (i + 1) % 2 === 0;
               return (
-                <Box px='24px' key={item.heading}>
+                <Box px='56px' key={item.heading}>
                   <Text
                     textAlign='center'
                     fontWeight='thin'
