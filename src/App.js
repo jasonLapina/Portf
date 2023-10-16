@@ -14,6 +14,10 @@ import { useEffect } from "react";
 import Navbar from "./components/UI/Navbar";
 import Footer from "./components/Footer";
 
+import ReactGA from "react-ga4";
+
+ReactGA.send({ hitType: "pageview", page: "/", title: "Home page" });
+
 function App() {
   useEffect(() => {
     AOS.init({
