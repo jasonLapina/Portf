@@ -30,13 +30,6 @@ function Projects() {
       repo: "https://github.com/jasonLapina/Lapsflix-v3",
     },
     {
-      title: "NomNom",
-      text: "Food browsing app, personal project",
-      image: ["/assets/projs/nomnom1.png", "/assets/projs/nomnom2.png"],
-      link: "https://nomnom-zeta.vercel.app/",
-      repo: "https://github.com/jasonLapina/nomnom-v2",
-    },
-    {
       title: "JMG Writes",
       text: "Copywriter's website, personal project",
       image: ["/assets/projs/jmg1.png", "/assets/projs/jmg2.png"],
