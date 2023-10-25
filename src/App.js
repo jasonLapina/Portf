@@ -15,7 +15,6 @@ import Navbar from "./components/UI/Navbar";
 import Footer from "./components/Footer";
 
 import ReactGA from "react-ga4";
-import PageNav from "./components/UI/PageNav";
 
 ReactGA.send({ hitType: "pageview", page: "/", title: "Home page" });
 
