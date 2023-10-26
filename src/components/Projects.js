@@ -1,7 +1,6 @@
-import { Box, Button, Grid, Icon, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Image, Text } from "@chakra-ui/react";
 import MySection from "./UI/MySection";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { BiLogoGithub } from "react-icons/bi";
 
 import MyTypewriter from "./UI/MyTypewriter";
 
@@ -9,158 +8,171 @@ function Projects() {
   const projs = [
     {
       title: "Leaderbored",
-      text: "Game portal for HTML5 games from Taktyl Studios Inc.",
+      text: "Game portal to play HTML5 games and climb the leaderboard.",
       image: [
         "/assets/projs/leaderbored.png",
         "/assets/projs/leaderbored2.png",
       ],
       link: "https://leaderbored.gg",
+      tags: {
+        work: ["Designed", "Developed"],
+        tools: ["Figma", "React"],
+      },
     },
     {
       title: "Taktyl Studios",
-      text: "Taktyl Studios Inc.'s website",
+      text: "Company website to showcase their awards, services, IPCatalog, and how to contact them.",
       image: ["/assets/projs/taktyl.png", "/assets/projs/taktyl2.png"],
       link: "https://taktylstudios.com/",
+      tags: {
+        work: ["Developed"],
+        tools: ["Next.js"],
+      },
     },
     {
       title: "LapsFlix",
-      text: "Movie/Series browsing app",
+      text: "Mock project for a movie/series browsing application.",
       image: ["/assets/projs/lapsflix.png", "/assets/projs/lapsflix2.png"],
       link: "https://lapsflix-v3.vercel.app/",
-      repo: "https://github.com/jasonLapina/Lapsflix-v3",
+
+      tags: {
+        work: ["Designed", "Developed"],
+        tools: ["Figma", "Next.js"],
+      },
     },
     {
       title: "JMG Writes",
-      text: "Copywriter's website, personal project",
+      text: "Mock project for a copywriter to showcase their work and connect with them.",
       image: ["/assets/projs/jmg1.png", "/assets/projs/jmg2.png"],
       link: "https://jmg-writes.vercel.app/",
-      repo: "https://github.com/jasonLapina/copy-writer",
+
+      tags: {
+        work: ["Designed", "Developed"],
+        tools: ["Figma", "React"],
+      },
     },
     {
       title: "AYO 2023",
-      text: "Event booking website for our client",
+      text: "Event booking website for Sikap Philippine's AYO2023.",
       image: ["/assets/projs/ayo1.png", "/assets/projs/ayo2.png"],
       link: "https://www.sikapphilippines.org/ayo2023",
+      tags: {
+        work: ["Designed", "Developed"],
+        tools: ["Wix", "Velo"],
+      },
     },
   ];
   return (
     <Box id='Projects'>
       <MySection heading='projects'>
         <MyTypewriter words={["Featured Projects"]} />
-        <Grid
-          // gridTemplateColumns='repeat(auto-fit, minmax(400px,1fr))'
-          gridTemplateColumns={{ md: "1fr 1fr", base: "1fr" }}
-          gap='24px'
-          justifyContent='center'
-          justifyItems='center'
-          maxW='1200px'
-          mx='auto'
-        >
-          {projs.map((item, i) => {
-            const { title, text, image, link, repo } = item;
-            return (
-              <Box
-                overflow='hidden'
-                borderRadius='20px'
-                key={title}
-                pos='relative'
-                gridColumn={i === 0 ? "1/-1" : ""}
-                role='group'
-                maxH={i === 0 ? "560px" : ""}
-                // filter='drop-shadow(4px 4px 16px cyan)'
-                boxShadow='4px 0px 16px cyan'
-              >
-                <Box
-                  color='white'
-                  bgImage='linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,.4))'
-                  pos='absolute'
-                  px='32px'
-                  py='16px'
-                  bottom='-40px'
-                  w='100%'
-                  opacity='0'
-                  transition='all .4s'
-                  _groupHover={{
-                    bottom: "0",
-                    opacity: 1,
-                  }}
-                  zIndex={4}
+        {projs.map((p, i) => {
+          const { title, text, image, link, tags } = p;
+          const even = i % 2 === 0;
+          return (
+            <Flex
+              borderBlock='solid 1px rgba(255,255,255,.3)'
+              py='40px'
+              flexDir={even ? "row" : "row-reverse"}
+              key={title}
+              my='40px'
+              px='80px'
+            >
+              <Box flex='1' textAlign={even ? "left" : "right"}>
+                <Text fontSize='40px'>{title}</Text>
+                <Text
+                  maxW='400px'
+                  mr={even ? "auto" : ""}
+                  ml={even ? "" : "auto"}
+                  opacity={0.6}
                 >
-                  <Text
-                    textShadow='2px 2px 4px coral'
-                    fontSize='32px'
-                    fontWeight='thin'
-                    letterSpacing='wide'
-                  >
-                    {title}
-                    <Button
-                      variant='unstyled'
-                      fontSize='40px'
-                      color='white'
-                      pos='absolute'
-                      transform='translate(16px,-16px)'
-                      filter='drop-shadow(4px 4px 8px coral)'
-                      as='a'
-                      href={link}
-                      target='_blank'
-                      rel='noreferrer'
-                    >
-                      <ExternalLinkIcon />
-                    </Button>
-                    {repo && (
-                      <Button
-                        variant='unstyled'
-                        fontSize='40px'
-                        color='white'
-                        pos='absolute'
-                        filter='drop-shadow(4px 4px 8px coral)'
-                        as='a'
-                        href={repo}
-                        target='_blank'
-                        rel='noreferrer'
-                        transform='translate(64px,-5px)'
-                      >
-                        <Icon as={BiLogoGithub} />
-                      </Button>
-                    )}
+                  {text}
+                </Text>
+                <Box my='16px'>
+                  <Text mb='8px' opacity='.6'>
+                    Tasks:
                   </Text>
-
-                  <Text>{text}</Text>
-                </Box>
-                <Box
-                  as='a'
-                  href={link}
-                  target='_blank'
-                  rel='noreferrer'
-                  pos='relative'
-                >
-                  <Image
-                    h={{ base: "auto", md: "100%" }}
-                    src={image[0]}
-                    loading='lazy'
-                    transition='all .4s'
-                    _groupHover={{
-                      opacity: 0,
-                    }}
-                  />
-                  <Image
-                    // h={{ base: "auto", md: "100%" }}
-                    src={image[1]}
-                    loading='lazy'
-                    opacity='0'
-                    pos='absolute'
-                    transition='all .4s'
-                    _groupHover={{
-                      opacity: 1,
-                    }}
-                    top='0'
-                    left='0'
-                  />
+                  <HStack justifyContent={even ? "start" : "end"}>
+                    {tags.work.map((t) => (
+                      <Box
+                        key={title + t}
+                        bgColor={t === "Designed" ? "coral" : "cyan"}
+                        borderRadius='10px'
+                        px='8px'
+                        py='4px'
+                        color={t === "Designed" ? "white" : "black"}
+                        fontWeight='semibold'
+                      >
+                        {t}
+                      </Box>
+                    ))}
+                  </HStack>
+                  <Box mt='24px'>
+                    <Text opacity='.6'>Tools:</Text>
+                    <HStack
+                      flexDir={even ? "row" : "row-reverse"}
+                      justifyContent={even ? "start" : "end"}
+                    >
+                      {tags.tools.map((tool) => {
+                        return (
+                          <Box
+                            key={title + tool}
+                            borderRadius='10px'
+                            px='8px'
+                            py='4px'
+                            fontWeight='semibold'
+                          >
+                            {tool}
+                          </Box>
+                        );
+                      })}
+                      <a href={link} target='_blank' rel='noopener noreferrer'>
+                        <Button
+                          variant='outline'
+                          px='32px'
+                          py='24px'
+                          borderRadius='20px'
+                          transition='all .4s'
+                          _hover={{
+                            borderColor: "cyan",
+                            color: "white",
+                          }}
+                          color='cyan'
+                        >
+                          Visit website
+                          <ExternalLinkIcon ml='8px' />
+                        </Button>
+                      </a>
+                    </HStack>
+                  </Box>
                 </Box>
               </Box>
-            );
-          })}
-        </Grid>
+              <Box
+                borderRadius='10px'
+                pos='relative'
+                flex='1'
+                role='group'
+                overflow='hidden'
+                bgColor='red'
+                maxH='310px'
+              >
+                <Image src={image[0]} />
+                <Image
+                  src={image[1]}
+                  pos='absolute'
+                  top='0'
+                  left='120px'
+                  opacity={0}
+                  transition='all .3s'
+                  _groupHover={{
+                    left: "0",
+                    opacity: 1,
+                  }}
+                />
+              </Box>
+            </Flex>
+          );
+        })}
       </MySection>
     </Box>
   );
