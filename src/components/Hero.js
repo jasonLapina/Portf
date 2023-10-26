@@ -37,8 +37,13 @@ function Hero() {
         <Text filter='drop-shadow(1px 1px 4px white)' as='span'>
           Hi, I'm Jason.
         </Text>
-        <Text opacity='.7' maxW='700px' fontSize='20px'>
-          I'm an expert Web and Mobile{" "}
+        <Text
+          textAlign='center'
+          opacity='.7'
+          w={"100vw"}
+          fontSize={{ base: "19px", md: "20px" }}
+        >
+          Expert Web and Mobile{" "}
           <Box as='span' bgColor='coral'>
             {text}
           </Box>
@@ -48,7 +53,7 @@ function Hero() {
 
       <MotionBox
         pos='absolute'
-        bottom={{ base: "20%", md: "18%" }}
+        bottom={{ base: "15%", md: "18%" }}
         left='50%'
         transform='translateX(-50%)'
         zIndex={5}
