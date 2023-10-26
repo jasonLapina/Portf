@@ -73,17 +73,20 @@ function Projects() {
             <Flex
               borderBlock='solid 1px rgba(255,255,255,.3)'
               py='40px'
-              flexDir={even ? "row" : "row-reverse"}
+              flexDir={{ base: "column", md: even ? "row" : "row-reverse" }}
               key={title}
               my='40px'
-              px='80px'
+              px='8px'
             >
-              <Box flex='1' textAlign={even ? "left" : "right"}>
+              <Box
+                flex='1'
+                textAlign={{ base: "left", md: even ? "left" : "right" }}
+              >
                 <Text fontSize='40px'>{title}</Text>
                 <Text
                   maxW='400px'
-                  mr={even ? "auto" : ""}
-                  ml={even ? "" : "auto"}
+                  mr={{ md: even ? "auto" : "" }}
+                  ml={{ md: even ? "" : "auto" }}
                   opacity={0.6}
                 >
                   {text}
@@ -92,7 +95,12 @@ function Projects() {
                   <Text mb='8px' opacity='.6'>
                     Tasks:
                   </Text>
-                  <HStack justifyContent={even ? "start" : "end"}>
+                  <HStack
+                    justifyContent={{
+                      base: "start",
+                      md: even ? "start" : "end",
+                    }}
+                  >
                     {tags.work.map((t) => (
                       <Box
                         key={title + t}
@@ -108,10 +116,15 @@ function Projects() {
                     ))}
                   </HStack>
                   <Box mt='24px'>
-                    <Text opacity='.6'>Tools:</Text>
+                    <Text opacity='.6' mb={{ base: "8px", md: "0" }}>
+                      Tools:
+                    </Text>
                     <HStack
-                      flexDir={even ? "row" : "row-reverse"}
-                      justifyContent={even ? "start" : "end"}
+                      flexDir={{ md: even ? "row" : "row-reverse" }}
+                      justifyContent={{
+                        base: "start",
+                        md: even ? "start" : "end",
+                      }}
                     >
                       {tags.tools.map((tool) => {
                         return (
@@ -153,11 +166,11 @@ function Projects() {
                 flex='1'
                 role='group'
                 overflow='hidden'
-                bgColor='red'
                 maxH='310px'
               >
-                <Image src={image[0]} />
+                <Image borderRadius='10px' src={image[0]} />
                 <Image
+                  borderRadius='10px'
                   src={image[1]}
                   pos='absolute'
                   top='0'
