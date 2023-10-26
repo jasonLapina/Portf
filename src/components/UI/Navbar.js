@@ -15,16 +15,16 @@ function Navbar() {
   const sections = [
     { label: "Home", icon: BiSolidHome },
     {
-      label: "About",
-      icon: BiSolidUser,
+      label: "Projects",
+      icon: BiSolidFolder,
     },
     {
       label: "Skills",
       icon: BiSolidWrench,
     },
     {
-      label: "Projects",
-      icon: BiSolidFolder,
+      label: "About",
+      icon: BiSolidUser,
     },
     {
       label: "Contact",
