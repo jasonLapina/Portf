@@ -78,7 +78,10 @@ function Skills() {
         </Center>
         <Box mt='80px'>
           <MyTypewriter words={["What I do"]} />
-          <Grid gridTemplateColumns='1fr 1fr'>
+          <Grid
+            gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
+            rowGap='40px'
+          >
             {genSkills.map((item) => (
               <VStack>
                 <Image maxW='200px' h='160px' p='16px' src={item.img} />
