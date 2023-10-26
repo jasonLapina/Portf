@@ -32,9 +32,9 @@ function App() {
       <Box mb='160px'>
         <Hero />
       </Box>
+      <Projects />
       <About />
       <Skills />
-      <Projects />
       <Contact />
       <Footer />
       <Navbar />
