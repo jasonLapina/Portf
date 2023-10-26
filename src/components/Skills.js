@@ -1,8 +1,28 @@
-import { Box, Center, Heading, Image, Tooltip } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Grid,
+  Image,
+  Text,
+  Tooltip,
+  VStack,
+} from "@chakra-ui/react";
 import MySection from "./UI/MySection";
-import { Typewriter } from "react-simple-typewriter";
+
 import MyTypewriter from "./UI/MyTypewriter";
 function Skills() {
+  const genSkills = [
+    {
+      title: "Design",
+      text: "An expert at web & mobile design that finds the perfect balance between aesthetic and user experience. I use figma for wireframing and high-fidelity prototypes.",
+      img: "/assets/skills/design.svg",
+    },
+    {
+      title: "Develop",
+      text: "An experienced web developer that specializes on the front-end. Mastery of HTML, CSS, Javascript, and it's frameworks such as React and Next.js",
+      img: "/assets/skills/develop.svg",
+    },
+  ];
   const skills = [
     { icon: "/assets/skills/figma.svg", label: "Figma" },
     { icon: "/assets/skills/html.svg", label: "HTML5" },
@@ -56,6 +76,22 @@ function Skills() {
             </Tooltip>
           ))}
         </Center>
+        <Box mt='80px'>
+          <MyTypewriter words={["What I do"]} />
+          <Grid gridTemplateColumns='1fr 1fr'>
+            {genSkills.map((item) => (
+              <VStack>
+                <Image maxW='200px' h='160px' p='16px' src={item.img} />
+                <Text fontSize='32px' fontWeight='semibold'>
+                  {item.title}
+                </Text>
+                <Text maxW='400px' mx='auto' opacity='.6'>
+                  {item.text}
+                </Text>
+              </VStack>
+            ))}
+          </Grid>
+        </Box>
       </MySection>
     </Box>
   );
