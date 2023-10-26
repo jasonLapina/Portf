@@ -32,7 +32,13 @@ function Navbar() {
     },
   ];
   const handleNav = (section) => {
-    document.getElementById(section).scrollIntoView({ behavior: "smooth" });
+    const scrollTo = document.getElementById(section);
+    const offset = 40;
+    const scrollPos = scrollTo.offsetTop - offset;
+    window.scrollTo({
+      top: scrollPos,
+      behavior: "smooth",
+    });
   };
 
   return (

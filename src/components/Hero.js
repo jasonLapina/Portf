@@ -1,5 +1,5 @@
 import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import MotionBox from "./UI/MotionBox";
 
@@ -9,10 +9,6 @@ function Hero() {
     loop: 0,
     typeSpeed: 50,
   });
-
-  const handleClick = (section) => {
-    document.getElementById(section).scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <Center
@@ -70,7 +66,15 @@ function Hero() {
             borderColor: "white",
             color: "coral",
           }}
-          onClick={() => handleClick("Projects")}
+          onClick={() => {
+            const section = document.getElementById("Projects");
+            const offset = 40;
+            const scrollPos = section.offsetTop - offset;
+            window.scrollTo({
+              top: scrollPos,
+              behavior: "smooth",
+            });
+          }}
         >
           See my work below
         </Button>
