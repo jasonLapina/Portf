@@ -15,22 +15,21 @@ function About() {
   const details = [
     {
       heading: "Summary",
-      text: "I'm Jason Alexander Lapina, an experienced self-taught web developer. My professional experience has allowed me to not only hone the skills I already have but to also expand my tech stack. I spend most of my time either coding or learning new things.",
+      text: "I'm Jason Alexander Lapina, an expert web developer and web designer. My experience in the industry has allowed me to design and develop websites on time and with the best quality. I spend most of my time designing, coding, or learning new things.",
       image: "/assets/about-me.svg",
     },
     {
       heading: "Experience",
-      text: "Over the course of a year, I have had the privilege of contributing to and leading diverse projects, utilizing a range of technologies. Prior to my professional experience, I dedicated significant time to crafting personal projects and refining my coding skills.",
+      text: "Over the course of my professional experience, I have contributed to both the design and development of my company's/clients' web apps using a variety of technology such as Figma for design, and React for development.",
       image: "/assets/about-work.svg",
     },
     {
       heading: "Education",
-      text: "I studied Agricultural and Applied Economics at the University of the Philippines. I've since developed a strong passion for programming and self-studied, not only web development, but also I.T. and AWS via online courses. My certifications are available upon request.",
-      image: "/assets/about-educ.svg",
+      text: "I am a self-taught web developer and designer which is proof in and of itself that I am more than capable of learning a lot of new things rather quickly",
     },
     {
       heading: "Personal",
-      text: "When I'm not coding or learning something new about tech, I usually watch a movie/series. I'm currently invested in the anime One Piece. I also play a variety of video games, mostly online-competitive games and single-player games.",
+      text: "My hobbies outside of design and development would include gaming, watching a movie/series, and doing at-home workouts",
       image: "/assets/about-personal.svg",
     },
   ];
