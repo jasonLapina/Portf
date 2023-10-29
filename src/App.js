@@ -33,8 +33,8 @@ function App() {
         <Hero />
       </Box>
       <Projects />
-      <About />
       <Skills />
+      <About />
       <Contact />
       <Footer />
       <Navbar />
