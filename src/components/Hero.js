@@ -96,6 +96,8 @@ function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             filter='drop-shadow(2px 2px 8px cyan)'
+            bgGradient='linear(coral,cyan)'
+            bgClip='text'
           >
             DEVE
           </MotionBox>
@@ -104,6 +106,8 @@ function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             filter='drop-shadow(2px 2px 8px cyan)'
+            bgGradient='linear(cyan,coral)'
+            bgClip='text'
           >
             LOPER
           </MotionBox>
