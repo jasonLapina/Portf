@@ -21,7 +21,7 @@ function MySection(props) {
       <Heading data-aos='fade-up' mt='48px' mb='80px'>
         <Text color='blue.300' as='span'>
           {"<"}
-          <Text color='coral' as='span'>
+          <Text color='crimson' as='span'>
             {"/"}
           </Text>
         </Text>
