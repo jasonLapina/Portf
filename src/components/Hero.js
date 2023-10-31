@@ -95,7 +95,7 @@ function Hero() {
             initial={{ opacity: 0, x: -120 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            filter='drop-shadow(2px 2px 8px crimson)'
+            filter='drop-shadow(2px 2px 8px cyan)'
             bgGradient='linear(coral,cyan)'
             bgClip='text'
           >
@@ -105,7 +105,7 @@ function Hero() {
             initial={{ opacity: 0, x: 120 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            filter='drop-shadow(2px 2px 8px crimson)'
+            filter='drop-shadow(2px 2px 8px cyan)'
             bgGradient='linear(cyan,coral)'
             bgClip='text'
           >
