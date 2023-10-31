@@ -26,6 +26,7 @@ function About() {
     {
       heading: "Education",
       text: "I am a self-taught web developer and designer which is proof in and of itself that I am more than capable of learning a lot of new things rather quickly",
+      image: "/assets/about-educ.svg",
     },
     {
       heading: "Personal",

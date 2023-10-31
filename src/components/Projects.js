@@ -105,6 +105,9 @@ function Projects() {
                       <Box
                         key={title + t}
                         bgColor={t === "Designed" ? "coral" : "cyan"}
+                        filter={`drop-shadow(2px 2px 4px  ${
+                          t === "Designed" ? "coral" : "cyan"
+                        })`}
                         borderRadius='10px'
                         px='8px'
                         py='4px'
