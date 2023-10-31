@@ -83,7 +83,7 @@ function Skills() {
             rowGap='40px'
           >
             {genSkills.map((item, i) => (
-              <VStack>
+              <VStack data-aos='fade-up'>
                 <Image maxW='200px' h='160px' p='16px' src={item.img} />
                 <Text
                   bgGradient={`linear(${

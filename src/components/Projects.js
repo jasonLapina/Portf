@@ -3,6 +3,7 @@ import MySection from "./UI/MySection";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 import MyTypewriter from "./UI/MyTypewriter";
+import MotionBox from "./UI/MotionBox";
 
 function Projects() {
   const projs = [
@@ -78,9 +79,10 @@ function Projects() {
               my='40px'
               px='8px'
             >
-              <Box
+              <MotionBox
                 flex='1'
                 textAlign={{ base: "left", md: even ? "left" : "right" }}
+                data-aos={even ? "fade-right" : "fade-left"}
               >
                 <Text fontSize='40px'>{title}</Text>
                 <Text
@@ -162,14 +164,15 @@ function Projects() {
                     </HStack>
                   </Box>
                 </Box>
-              </Box>
-              <Box
+              </MotionBox>
+              <MotionBox
                 borderRadius='10px'
                 pos='relative'
                 flex='1'
                 role='group'
                 overflow='hidden'
                 maxH='310px'
+                data-aos={even ? "fade-left" : "fade-right"}
               >
                 <Image borderRadius='10px' src={image[0]} />
                 <Image
@@ -185,7 +188,7 @@ function Projects() {
                     opacity: 1,
                   }}
                 />
-              </Box>
+              </MotionBox>
             </Flex>
           );
         })}
