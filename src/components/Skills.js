@@ -82,10 +82,17 @@ function Skills() {
             gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
             rowGap='40px'
           >
-            {genSkills.map((item) => (
+            {genSkills.map((item, i) => (
               <VStack>
                 <Image maxW='200px' h='160px' p='16px' src={item.img} />
-                <Text fontSize='32px' fontWeight='semibold'>
+                <Text
+                  bgGradient={`linear(${
+                    i === 0 ? "cyan,coral" : "coral,cyan"
+                  })`}
+                  bgClip='text'
+                  fontSize='32px'
+                  fontWeight='semibold'
+                >
                   {item.title}
                 </Text>
                 <Text maxW='400px' mx='auto' opacity='.6'>
