@@ -25,17 +25,19 @@ function Skills() {
   ];
   const skills = [
     { icon: "/assets/skills/figma.svg", label: "Figma" },
+    { icon: "/assets/skills/photoshop.svg", label: "photoshop" },
+    { icon: "/assets/skills/webflow.svg", label: "webflow" },
+    { icon: "/assets/skills/wix.svg", label: "wix" },
+    { icon: "/assets/skills/shopify.svg", label: "shopify" },
+    { icon: "/assets/skills/wordpress.svg", label: "wordpress" },
     { icon: "/assets/skills/html.svg", label: "HTML5" },
     { icon: "/assets/skills/css.svg", label: "CSS3" },
     { icon: "/assets/skills/js.svg", label: "Javascript" },
     { icon: "/assets/skills/ts.svg", label: "Typescript" },
     { icon: "/assets/skills/react.svg", label: "React" },
-    { icon: "/assets/skills/jest.svg", label: "Jest" },
     { icon: "/assets/skills/next.svg", label: "Next.js" },
+    { icon: "/assets/skills/jest.svg", label: "Jest" },
     { icon: "/assets/skills/git.svg", label: "Git & Github" },
-    { icon: "/assets/skills/aws.svg", label: "Amazon Web Services" },
-    { icon: "/assets/skills/node.svg", label: "Node" },
-    { icon: "/assets/skills/mongodb.svg", label: "MongoDB" },
   ];
 
   return (
@@ -51,8 +53,13 @@ function Skills() {
             maxW={{ base: "400px", md: "700px", lg: "1000px" }}
           />
           {skills.map((item, i) => (
-            <Tooltip key={i} hasArrow label={item.label}>
+            <Tooltip
+              key={i}
+              hasArrow
+              label={item.label[0].toLocaleUpperCase() + item.label.slice(1)}
+            >
               <Image
+                alt={item.label + "logo"}
                 data-aos='fade-in'
                 data-aos-delay='500'
                 w={{ base: "40px", md: "80px" }}
