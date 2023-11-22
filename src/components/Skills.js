@@ -11,6 +11,7 @@ import MySection from "./UI/MySection";
 
 import MyTypewriter from "./UI/MyTypewriter";
 import useSkills from "../hooks/useSkills";
+import { apiURL } from "../utils/config";
 const genSkills = [
   {
     title: "Design",
@@ -23,32 +24,15 @@ const genSkills = [
     img: "/assets/skills/develop.svg",
   },
 ];
-const skills = [
-  { icon: "/assets/skills/figma.svg", label: "Figma" },
-  { icon: "/assets/skills/photoshop.svg", label: "photoshop" },
-  { icon: "/assets/skills/webflow.svg", label: "webflow" },
-  { icon: "/assets/skills/wix.svg", label: "wix" },
-  { icon: "/assets/skills/shopify.svg", label: "shopify" },
-  { icon: "/assets/skills/wordpress.svg", label: "wordpress" },
-  { icon: "/assets/skills/html.svg", label: "HTML5" },
-  { icon: "/assets/skills/css.svg", label: "CSS3" },
-  { icon: "/assets/skills/js.svg", label: "Javascript" },
-  { icon: "/assets/skills/ts.svg", label: "Typescript" },
-  { icon: "/assets/skills/react.svg", label: "React" },
-  { icon: "/assets/skills/next.svg", label: "Next.js" },
-  { icon: "/assets/skills/jest.svg", label: "Jest" },
-  { icon: "/assets/skills/git.svg", label: "Git & Github" },
-];
 
 function Skills() {
-  const { data: skills, isLoading } = useSkills();
+  const { data, isLoading } = useSkills();
 
   if (isLoading) return <div />;
-  console.log(skills);
 
   return (
     <Box id='Skills'>
-      {/* <MySection heading='skills'>
+      <MySection heading='skills'>
         <MyTypewriter words={["My tech stack"]} />
         <Center pos='relative' my='80px'>
           <Image
@@ -58,30 +42,30 @@ function Skills() {
             filter={`drop-shadow(2px 2px 20px coral)`}
             maxW={{ base: "400px", md: "700px", lg: "1000px" }}
           />
-          {skills.map((item, i) => (
-            <Tooltip
-              key={i}
-              hasArrow
-              label={item.label[0].toLocaleUpperCase() + item.label.slice(1)}
-            >
+          {data.map((item, i) => (
+            <Tooltip key={i} hasArrow label={item.name}>
               <Image
                 alt={item.label + "logo"}
                 data-aos='fade-in'
                 data-aos-delay='500'
                 w={{ base: "40px", md: "80px" }}
                 key={item.icon}
-                src={item.icon}
+                // src={item.icon}
+                src={
+                  apiURL +
+                  `/storage/v1/object/public/skills/${item.name.toLowerCase()}.svg`
+                }
                 pos='absolute'
                 transform={{
                   md: `rotate(${
-                    i * (360 / skills.length)
+                    i * (360 / data.length)
                   }deg) translateY(-280px) rotate(-${
-                    i * (360 / skills.length)
+                    i * (360 / data.length)
                   }deg) !important`,
                   base: `rotate(${
-                    i * (360 / skills.length)
+                    i * (360 / data.length)
                   }deg) translateY(-140px) rotate(-${
-                    i * (360 / skills.length)
+                    i * (360 / data.length)
                   }deg) !important`,
                 }}
                 filter={`drop-shadow(2px 2px 8px cyan)`}
@@ -115,7 +99,7 @@ function Skills() {
             ))}
           </Grid>
         </Box>
-      </MySection> */}
+      </MySection>
     </Box>
   );
 }
