@@ -10,39 +10,45 @@ import {
 import MySection from "./UI/MySection";
 
 import MyTypewriter from "./UI/MyTypewriter";
+import useSkills from "../hooks/useSkills";
+const genSkills = [
+  {
+    title: "Design",
+    text: "An expert at web & mobile design that finds the perfect balance between aesthetic and user experience. I use figma for wireframing and high-fidelity prototypes.",
+    img: "/assets/skills/design.svg",
+  },
+  {
+    title: "Develop",
+    text: "An experienced web developer that specializes on the front-end. Mastery of HTML, CSS, Javascript, and it's frameworks such as React and Next.js",
+    img: "/assets/skills/develop.svg",
+  },
+];
+const skills = [
+  { icon: "/assets/skills/figma.svg", label: "Figma" },
+  { icon: "/assets/skills/photoshop.svg", label: "photoshop" },
+  { icon: "/assets/skills/webflow.svg", label: "webflow" },
+  { icon: "/assets/skills/wix.svg", label: "wix" },
+  { icon: "/assets/skills/shopify.svg", label: "shopify" },
+  { icon: "/assets/skills/wordpress.svg", label: "wordpress" },
+  { icon: "/assets/skills/html.svg", label: "HTML5" },
+  { icon: "/assets/skills/css.svg", label: "CSS3" },
+  { icon: "/assets/skills/js.svg", label: "Javascript" },
+  { icon: "/assets/skills/ts.svg", label: "Typescript" },
+  { icon: "/assets/skills/react.svg", label: "React" },
+  { icon: "/assets/skills/next.svg", label: "Next.js" },
+  { icon: "/assets/skills/jest.svg", label: "Jest" },
+  { icon: "/assets/skills/git.svg", label: "Git & Github" },
+];
+
 function Skills() {
-  const genSkills = [
-    {
-      title: "Design",
-      text: "An expert at web & mobile design that finds the perfect balance between aesthetic and user experience. I use figma for wireframing and high-fidelity prototypes.",
-      img: "/assets/skills/design.svg",
-    },
-    {
-      title: "Develop",
-      text: "An experienced web developer that specializes on the front-end. Mastery of HTML, CSS, Javascript, and it's frameworks such as React and Next.js",
-      img: "/assets/skills/develop.svg",
-    },
-  ];
-  const skills = [
-    { icon: "/assets/skills/figma.svg", label: "Figma" },
-    { icon: "/assets/skills/photoshop.svg", label: "photoshop" },
-    { icon: "/assets/skills/webflow.svg", label: "webflow" },
-    { icon: "/assets/skills/wix.svg", label: "wix" },
-    { icon: "/assets/skills/shopify.svg", label: "shopify" },
-    { icon: "/assets/skills/wordpress.svg", label: "wordpress" },
-    { icon: "/assets/skills/html.svg", label: "HTML5" },
-    { icon: "/assets/skills/css.svg", label: "CSS3" },
-    { icon: "/assets/skills/js.svg", label: "Javascript" },
-    { icon: "/assets/skills/ts.svg", label: "Typescript" },
-    { icon: "/assets/skills/react.svg", label: "React" },
-    { icon: "/assets/skills/next.svg", label: "Next.js" },
-    { icon: "/assets/skills/jest.svg", label: "Jest" },
-    { icon: "/assets/skills/git.svg", label: "Git & Github" },
-  ];
+  const { data: skills, isLoading } = useSkills();
+
+  if (isLoading) return <div />;
+  console.log(skills);
 
   return (
     <Box id='Skills'>
-      <MySection heading='skills'>
+      {/* <MySection heading='skills'>
         <MyTypewriter words={["My tech stack"]} />
         <Center pos='relative' my='80px'>
           <Image
@@ -109,7 +115,7 @@ function Skills() {
             ))}
           </Grid>
         </Box>
-      </MySection>
+      </MySection> */}
     </Box>
   );
 }
