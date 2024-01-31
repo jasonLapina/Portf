@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@chakra-ui/react";
 import { Text3D, Center, Sparkles } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { easing } from "maath";
@@ -18,12 +19,12 @@ function CameraRig({ children }) {
 }
 
 function Copy({ text }) {
+  const [isMd] = useMediaQuery("(min-width: 767px)");
   return (
     <CameraRig>
       <Center>
-        <Text3D size={2} font='/Heading.json'>
+        <Text3D size={isMd ? 2 : 1} font='/Heading.json'>
           {text}
-
           <meshNormalMaterial />
         </Text3D>
       </Center>

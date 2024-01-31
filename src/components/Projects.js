@@ -75,7 +75,7 @@ function Projects() {
     <Box id='Projects'>
       <MySection heading='projects'>
         {/* <MyTypewriter words={["Featured Projects"]} /> */}
-        <TextHeading text={"Featured Projects"} />
+        <TextHeading text={"Projects"} />
         {data.map((p, i) => {
           const { name, description, link, tools, tasks } = p;
 
