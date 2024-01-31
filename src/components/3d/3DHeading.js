@@ -10,7 +10,7 @@ function CameraRig({ children }) {
   useFrame((state, delta) => {
     easing.dampE(
       groupRef.current.rotation,
-      [-state.pointer.y / 5, state.pointer.x / 10, 0],
+      [-state.pointer.y / 10, state.pointer.x / 25, 0],
       0.25,
       delta
     );
