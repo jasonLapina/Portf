@@ -90,7 +90,7 @@ function Navbar() {
         label={"Download resume"}
         hasArrow
       >
-        <Box download href='Jason Lapina - Resume.pdf' as='a'>
+        <Box as='a' href='Jason Lapina - Resume.pdf' download cursor='pointer'>
           <DownloadIcon fontSize='24px' color='coral' />
         </Box>
       </Tooltip>
