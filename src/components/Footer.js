@@ -20,7 +20,7 @@ function Footer() {
           <Heading mb='16px' filter='drop-shadow(2px 2px 8px cyan)'>
             Jason Alexander Lapina
           </Heading>
-          <Text fontSize='24px' filter='drop-shadow(2px 2px 8px coral)'>
+          <Text fontSize='24px' filter='drop-shadow(2px 2px 8px #ff00a0)'>
             Web Developer, UI/UX Designer
           </Text>
         </Box>

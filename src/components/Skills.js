@@ -52,7 +52,7 @@ function Skills() {
               data-aos='fade-up'
               src='/assets/skills-invo.png'
               borderRadius='full'
-              filter={`drop-shadow(2px 2px 20px coral)`}
+              filter={`drop-shadow(2px 2px 20px #ff00a0)`}
               maxW={{ base: "400px", md: "700px", lg: "1000px" }}
             />
             {data.map((item, i) => (
@@ -97,7 +97,7 @@ function Skills() {
                   <Image maxW='200px' h='160px' p='16px' src={item.img} />
                   <Text
                     bgGradient={`linear(${
-                      i === 0 ? "cyan,coral" : "coral,cyan"
+                      i === 0 ? "cyan,#ff00a0" : "#ff00a0,cyan"
                     })`}
                     bgClip='text'
                     fontSize='32px'

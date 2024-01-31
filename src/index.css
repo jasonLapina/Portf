@@ -3,7 +3,7 @@
 }
 
 .slick-dots li.slick-active button:before {
-  color: coral;
+  color: #ff00a0;
   opacity: 1;
 }
 

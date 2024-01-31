@@ -23,7 +23,7 @@ function MyTypewriter(props) {
         {inView && (
           <Typewriter
             cursor
-            cursorColor='coral'
+            cursorColor='#ff00a0'
             cursorStyle='_'
             words={words}
             {...props}

@@ -79,7 +79,7 @@ function Navbar() {
           key={item.label}
         >
           <CustomCard onClick={() => handleNav(item.label)} cursor='pointer'>
-            <Icon fontSize='24px' color='coral' as={item.icon} />
+            <Icon fontSize='24px' color='#ff00a0' as={item.icon} />
           </CustomCard>
         </Tooltip>
       ))}
@@ -91,7 +91,7 @@ function Navbar() {
         hasArrow
       >
         <Box as='a' href='Jason Lapina - Resume.pdf' download cursor='pointer'>
-          <DownloadIcon fontSize='24px' color='coral' />
+          <DownloadIcon fontSize='24px' color='#ff00a0' />
         </Box>
       </Tooltip>
     </MotionBox>

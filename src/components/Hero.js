@@ -44,10 +44,10 @@ function Hero() {
           fontSize={{ base: "19px", md: "20px" }}
         >
           Web{" "}
-          <Box as='span' bgColor='coral'>
+          <Box as='span' bgColor='#ff00a0'>
             {text}
           </Box>
-          <Cursor cursorBlinking cursorStyle='_' cursorColor='coral' />
+          <Cursor cursorBlinking cursorStyle='_' cursorColor='#ff00a0' />
         </Text>
       </MotionBox>
 
@@ -63,13 +63,13 @@ function Hero() {
           borderRadius='20px'
           borderWidth='2px'
           variant='outline'
-          borderColor='coral'
-          filter='drop-shadow(1px 1px 2px coral)'
+          borderColor='#ff00a0'
+          filter='drop-shadow(1px 1px 2px #ff00a0)'
           color='white'
           transition='all .4s'
           _hover={{
             borderColor: "white",
-            color: "coral",
+            color: "#ff00a0",
           }}
           onClick={() => {
             const section = document.getElementById("Projects");
@@ -96,7 +96,7 @@ function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             filter='drop-shadow(2px 2px 8px cyan)'
-            bgGradient='linear(coral,cyan)'
+            bgGradient='linear(#ff00a0,cyan)'
             bgClip='text'
           >
             DEVE
@@ -106,7 +106,7 @@ function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             filter='drop-shadow(2px 2px 8px cyan)'
-            bgGradient='linear(cyan,coral)'
+            bgGradient='linear(cyan,#ff00a0)'
             bgClip='text'
           >
             LOPER

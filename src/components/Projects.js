@@ -114,9 +114,9 @@ function Projects() {
                     {tasks.map((t) => (
                       <Box
                         key={name + t}
-                        bgColor={t === "Designed" ? "coral" : "cyan"}
+                        bgColor={t === "Designed" ? "#ff00a0" : "cyan"}
                         filter={`drop-shadow(2px 2px 4px  ${
-                          t === "Designed" ? "coral" : "cyan"
+                          t === "Designed" ? "#ff00a0" : "cyan"
                         })`}
                         borderRadius='10px'
                         px='8px'
