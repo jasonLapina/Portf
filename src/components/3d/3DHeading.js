@@ -1,5 +1,4 @@
-import { Box } from "@chakra-ui/react";
-import { Text3D, Center } from "@react-three/drei";
+import { Text3D, Center, Sparkles } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { easing } from "maath";
 import { useRef } from "react";
@@ -24,6 +23,7 @@ function Copy({ text }) {
       <Center>
         <Text3D size={2} font='/Heading.json'>
           {text}
+
           <meshNormalMaterial />
         </Text3D>
       </Center>
@@ -34,6 +34,7 @@ function Copy({ text }) {
 export default function TextHeading({ text }) {
   return (
     <Canvas>
+      <Sparkles scale={9} />
       <Copy text={text} />
     </Canvas>
   );

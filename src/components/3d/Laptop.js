@@ -1,4 +1,4 @@
-import { useGLTF, Environment, OrbitControls } from "@react-three/drei";
+import { useGLTF, Environment } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
@@ -22,6 +22,7 @@ function Laptop() {
     <>
       <ambientLight intensity={4} />
       <Environment preset='night' />
+
       <primitive
         ref={phoneRef}
         object={phone}
