@@ -6,6 +6,7 @@ import MyTypewriter from "./UI/MyTypewriter";
 import MotionBox from "./UI/MotionBox";
 import useProjects from "../hooks/useProjects";
 import { apiURL } from "../utils/config";
+import TextHeading from "./3d/3DHeading";
 
 function Projects() {
   // const projs = [
@@ -73,7 +74,8 @@ function Projects() {
   return (
     <Box id='Projects'>
       <MySection heading='projects'>
-        <MyTypewriter words={["Featured Projects"]} />
+        {/* <MyTypewriter words={["Featured Projects"]} /> */}
+        <TextHeading text={"Featured Projects"} />
         {data.map((p, i) => {
           const { name, description, link, tools, tasks } = p;
 

@@ -10,6 +10,7 @@ import MySection from "./UI/MySection";
 import Slider from "react-slick";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import MyTypewriter from "./UI/MyTypewriter";
+import TextHeading from "./3d/3DHeading";
 
 function About() {
   const details = [
@@ -58,7 +59,8 @@ function About() {
   return (
     <Box id='About'>
       <MySection heading={"aboutMe"}>
-        <MyTypewriter words={["My info"]} />
+        {/* <MyTypewriter words={["My info"]} /> */}
+        <TextHeading text={"Background"} />
         {/* FOR SMALLER SCREENS */}
         {!isMD && (
           <Box as={Slider} {...smallSettings}>
