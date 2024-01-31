@@ -15,6 +15,7 @@ import { apiURL } from "../utils/config";
 
 import Laptop from "./3d/Laptop";
 import { Canvas } from "@react-three/fiber";
+import TextHeading from "./3d/3DHeading";
 
 const genSkills = [
   {
@@ -39,8 +40,8 @@ function Skills() {
       <Box id='Skills' pos='relative'>
         <Box pos='absolute' w='100%' h='100%'></Box>
         <MySection heading='skills'>
-          <MyTypewriter words={["My tech stack"]} />
-
+          {/* <MyTypewriter words={["My tech stack"]} /> */}
+          <TextHeading text={"My tech stack"} />
           <Center pos='relative' my='80px'>
             <Box pos='absolute' w='100%' h='100%'>
               <Canvas>
