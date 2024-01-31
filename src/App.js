@@ -32,8 +32,8 @@ function App() {
       <Box mb='160px'>
         <Hero />
       </Box>
-      <Projects />
       <Skills />
+      <Projects />
       <About />
       <Contact />
       <Footer />
