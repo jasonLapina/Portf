@@ -43,7 +43,7 @@ function Hero() {
           w={"100vw"}
           fontSize={{ base: "19px", md: "20px" }}
         >
-          Expert Web and Mobile{" "}
+          Web{" "}
           <Box as='span' bgColor='coral'>
             {text}
           </Box>
