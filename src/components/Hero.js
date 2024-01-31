@@ -16,6 +16,10 @@ function Hero() {
       pos='relative'
       h={{ base: "70vh", md: "100vh" }}
       mb={{ base: "-120px" }}
+      bgImage={
+        "linear-gradient(to bottom, rgba(0,0,0,.1), #28282B), url('/assets/home-bg.jpg')"
+      }
+      bgSize='cover'
     >
       <MotionBox
         initial={{
