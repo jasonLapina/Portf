@@ -23,7 +23,7 @@ function Copy({ text }) {
   return (
     <CameraRig>
       <Center>
-        <Text3D size={isMd ? 2 : 1} font='/Heading.json'>
+        <Text3D size={2} font='/Heading.json'>
           {text}
           <meshNormalMaterial />
         </Text3D>
