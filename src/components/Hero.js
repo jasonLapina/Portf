@@ -2,6 +2,12 @@ import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
 
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import MotionBox from "./UI/MotionBox";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import { TextureLoader } from "three";
+import * as THREE from "three";
+import { easing } from "maath";
+import { useRef } from "react";
 
 function Hero() {
   const [text] = useTypewriter({
@@ -118,7 +124,7 @@ function Hero() {
         </HStack>
       </Box>
 
-      <MotionBox
+      {/* <MotionBox
         h={{ md: "90%", base: "30%" }}
         maxH='800px'
         aspectRatio='1/1'
@@ -138,9 +144,39 @@ function Hero() {
           y: 0,
         }}
         transition={{ duration: 1, delay: 0.8 }}
-      />
+      /> */}
+      <Canvas>
+        <HeroImg />
+      </Canvas>
     </Center>
   );
 }
 
 export default Hero;
+
+function HeroImg() {
+  // const texture = useLoader(TextureLoader, 'path/to/your/texture.jpg');
+  const texture = useLoader(TextureLoader, "/assets/hero-me.png");
+
+  const meshRef = useRef();
+
+  useFrame((state, delta) => {
+    easing.dampE(
+      meshRef.current.rotation,
+      [-state.pointer.y / 10, state.pointer.x / 10, 0],
+      0.25,
+      delta
+    );
+  });
+  return (
+    <>
+      {/* <OrbitControls /> */}
+      <ambientLight intensity={2} />
+      <directionalLight intensity={2} position={[0, -10, 2]} color='#ff00a0' />
+      <mesh ref={meshRef}>
+        <circleGeometry args={[3, 64]} />
+        <meshStandardMaterial transparent map={texture} />
+      </mesh>
+    </>
+  );
+}
