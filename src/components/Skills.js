@@ -86,32 +86,7 @@ function Skills() {
               </Tooltip>
             ))}
           </Center>
-          <Box mt='80px'>
-            <MyTypewriter words={["What I do"]} />
-            <Grid
-              gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
-              rowGap='40px'
-            >
-              {genSkills.map((item, i) => (
-                <VStack key={i} data-aos='fade-up'>
-                  <Image maxW='200px' h='160px' p='16px' src={item.img} />
-                  <Text
-                    bgGradient={`linear(${
-                      i === 0 ? "cyan,#ff00a0" : "#ff00a0,cyan"
-                    })`}
-                    bgClip='text'
-                    fontSize='32px'
-                    fontWeight='semibold'
-                  >
-                    {item.title}
-                  </Text>
-                  <Text maxW='400px' mx='auto' opacity='.6'>
-                    {item.text}
-                  </Text>
-                </VStack>
-              ))}
-            </Grid>
-          </Box>
+          <WhatIDo />
         </MySection>
       </Box>
     </>
@@ -119,3 +94,31 @@ function Skills() {
 }
 
 export default Skills;
+
+function WhatIDo() {
+  return (
+    <Box mt='80px'>
+      {/* <MyTypewriter words={["What I do"]} /> */}
+      <Grid gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }} rowGap='40px'>
+        {genSkills.map((item, i) => (
+          <VStack key={i} data-aos='fade-up'>
+            <Image maxW='200px' h='160px' p='16px' src={item.img} />
+            <Text
+              bgGradient={`linear(${
+                i === 0 ? "cyan,#ff00a0" : "#ff00a0,cyan"
+              })`}
+              bgClip='text'
+              fontSize='32px'
+              fontWeight='semibold'
+            >
+              {item.title}
+            </Text>
+            <Text maxW='400px' mx='auto' opacity='.6'>
+              {item.text}
+            </Text>
+          </VStack>
+        ))}
+      </Grid>
+    </Box>
+  );
+}
