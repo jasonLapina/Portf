@@ -171,7 +171,7 @@ function HeroImg() {
   return (
     <>
       {/* <OrbitControls /> */}
-      <ambientLight intensity={2} />
+      <ambientLight intensity={1} />
       <directionalLight intensity={2} position={[0, -10, 2]} color='#ff00a0' />
       <mesh ref={meshRef}>
         <circleGeometry args={[3, 64]} />
