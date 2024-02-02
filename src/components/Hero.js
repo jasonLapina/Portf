@@ -5,7 +5,7 @@ import MotionBox from "./UI/MotionBox";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Float, useGLTF } from "@react-three/drei";
 
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 
 function Hero() {
   const [text] = useTypewriter({
@@ -155,17 +155,11 @@ function Hero() {
 export default Hero;
 
 function HeroImg() {
-  // const texture = useLoader(TextureLoader, 'path/to/your/texture.jpg');
+  const react = useGLTF("/react.gltf");
+  const node = useGLTF("/node.gltf");
 
-  const react = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/react-logo/model.gltf"
-  );
-  const node = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/node/model.gltf"
-  );
-
-  const reactRef = useRef();
-  const nodeRef = useRef();
+  const reactRef = useRef(null);
+  const nodeRef = useRef(null);
 
   useFrame((state, delta) => {
     reactRef.current.rotation.y += delta;
@@ -178,20 +172,24 @@ function HeroImg() {
       <directionalLight color='cyan' intensity={5} position={[0, 1, 10]} />
 
       <Float speed={2}>
-        <primitive
-          ref={reactRef}
-          scale={0.4}
-          position={[-1.65, 1, 1]}
-          object={react.scene}
-        />
+        <Suspense fallback={<></>}>
+          <primitive
+            ref={reactRef}
+            scale={0.4}
+            position={[-1.65, 1, 1]}
+            object={react.scene}
+          />
+        </Suspense>
       </Float>
       <Float speed={2}>
-        <primitive
-          ref={nodeRef}
-          scale={0.4}
-          position={[1.4, 1.5, 1]}
-          object={node.scene}
-        />
+        <Suspense fallback={<></>}>
+          <primitive
+            ref={nodeRef}
+            scale={0.4}
+            position={[1.4, 1.5, 1]}
+            object={node.scene}
+          />
+        </Suspense>
       </Float>
     </>
   );
