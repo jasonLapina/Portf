@@ -132,7 +132,7 @@ function Hero() {
         bgRepeat='no-repeat'
         zIndex={2}
         bgImage={
-          "linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.6)), url('/assets/hero-me.png')"
+          "linear-gradient(to bottom, rgba(103, 242, 209,.1), rgba(0,0,0,.6)), url('/assets/hero-me.png')"
         }
         borderRadius='full'
         initial={{
