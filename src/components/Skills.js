@@ -42,7 +42,7 @@ function Skills() {
           {/* <MyTypewriter words={["My tech stack"]} /> */}
           <TextHeading text={"Tech Stack"} />
           <Center pos='relative' my='80px'>
-            <Box pos='absolute' w='100%' h='100%'>
+            <Box data-aos='fade-up' pos='absolute' w='100%' h='100%'>
               <Canvas>
                 <Laptop />
               </Canvas>

@@ -143,11 +143,25 @@ function Hero() {
         }}
         transition={{ duration: 1, delay: 0.8 }}
       />
-      <Box pos='absolute' zIndex={99} w='100%' h='100%'>
+      <MotionBox
+        initial={{
+          opacity: 0,
+          y: -120,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 1, delay: 1.6 }}
+        pos='absolute'
+        zIndex={99}
+        w='100%'
+        h='100%'
+      >
         <Canvas>
           <HeroImg />
         </Canvas>
-      </Box>
+      </MotionBox>
     </Center>
   );
 }
@@ -170,7 +184,6 @@ function HeroImg() {
       <Environment preset='city' />
       <ambientLight intensity={1} />
       <directionalLight color='cyan' intensity={5} position={[0, 1, 10]} />
-
       <Float speed={2}>
         <Suspense fallback={<></>}>
           <primitive

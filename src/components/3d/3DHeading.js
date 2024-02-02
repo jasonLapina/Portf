@@ -2,7 +2,7 @@ import { useMediaQuery } from "@chakra-ui/react";
 import { Text3D, Center, Sparkles } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { easing } from "maath";
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 
 function CameraRig({ children }) {
   const groupRef = useRef();
@@ -36,8 +36,10 @@ function Copy({ text }) {
 export default function TextHeading({ text }) {
   return (
     <Canvas>
-      <Sparkles scale={9} />
-      <Copy text={text} />
+      <Suspense fallback={<></>}>
+        <Sparkles scale={9} />
+        <Copy text={text} />
+      </Suspense>
     </Canvas>
   );
 }

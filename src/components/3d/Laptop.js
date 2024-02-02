@@ -1,14 +1,9 @@
 import { useGLTF, Environment, Float } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 
 function Laptop() {
-  const { scene: laptop } = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf"
-  );
-  const { scene: phone } = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/iphone-x/model.gltf"
-  );
+  const { scene: laptop } = useGLTF("/laptop.gltf");
+  const { scene: phone } = useGLTF("phone.gltf");
 
   const laptopRef = useRef();
   const phoneRef = useRef();
@@ -19,7 +14,7 @@ function Laptop() {
   // });
 
   return (
-    <>
+    <Suspense fallback={<></>}>
       <ambientLight intensity={4} />
       <Environment preset='night' />
       <Float speed={2}>
@@ -39,7 +34,7 @@ function Laptop() {
           position={[-3.4, -1.2, 1]}
         />
       </Float>
-    </>
+    </Suspense>
   );
 }
 export default Laptop;
