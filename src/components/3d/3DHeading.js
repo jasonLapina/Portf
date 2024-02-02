@@ -20,9 +20,10 @@ function CameraRig({ children }) {
 
 function Copy({ text }) {
   const [isMd] = useMediaQuery("(min-width: 767px)");
+
   return (
     <CameraRig>
-      <Center>
+      <Center position={[isMd ? -5 : 0, 0, 1]}>
         <Text3D size={isMd ? 2 : 1} font='/Heading.json'>
           {text}
           <meshNormalMaterial />
