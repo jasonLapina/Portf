@@ -1,4 +1,4 @@
-import { useGLTF, Environment } from "@react-three/drei";
+import { useGLTF, Environment, Float } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
@@ -13,29 +13,32 @@ function Laptop() {
   const laptopRef = useRef();
   const phoneRef = useRef();
 
-  useFrame((state, delta) => {
-    phoneRef.current.rotation.y += -delta * 1.1;
-    laptopRef.current.rotation.y += delta * 0.8;
-  });
+  // useFrame((state, delta) => {
+  //   phoneRef.current.rotation.y += -delta * 1.1;
+  //   laptopRef.current.rotation.y += delta * 0.8;
+  // });
 
   return (
     <>
       <ambientLight intensity={4} />
       <Environment preset='night' />
-
-      <primitive
-        ref={phoneRef}
-        object={phone}
-        rotation-x={0.2}
-        position={[3.5, -1, 1]}
-        scale={0.3}
-      />
-      <primitive
-        object={laptop}
-        ref={laptopRef}
-        scale={0.5}
-        position={[-3.4, -1.2, 1]}
-      />
+      <Float>
+        <primitive
+          ref={phoneRef}
+          object={phone}
+          rotation-x={0.2}
+          position={[3.5, -1, 1]}
+          scale={0.3}
+        />
+      </Float>
+      <Float>
+        <primitive
+          object={laptop}
+          ref={laptopRef}
+          scale={0.5}
+          position={[-3.4, -1.2, 1]}
+        />
+      </Float>
     </>
   );
 }
