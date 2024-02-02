@@ -3,7 +3,7 @@ import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import MotionBox from "./UI/MotionBox";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { Float, OrbitControls, useGLTF } from "@react-three/drei";
+import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei";
 import { TextureLoader } from "three";
 import * as THREE from "three";
 import { easing } from "maath";
@@ -184,10 +184,9 @@ function HeroImg() {
   return (
     <>
       {/* <OrbitControls /> */}
-
+      <Environment preset='city' />
       <ambientLight intensity={1} />
-      <directionalLight intensity={2} position={[-3, -10, 1]} color='#ff00a0' />
-      <directionalLight intensity={2} position={[3, 10, 1]} color='cyan' />
+      <directionalLight color='cyan' intensity={5} position={[0, 1, 10]} />
       {/* <mesh ref={meshRef}>
         <circleGeometry args={[3, 64]} />
         <meshStandardMaterial transparent map={texture} />
