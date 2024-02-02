@@ -22,7 +22,7 @@ function Laptop() {
     <>
       <ambientLight intensity={4} />
       <Environment preset='night' />
-      <Float>
+      <Float speed={2}>
         <primitive
           ref={phoneRef}
           object={phone}
@@ -31,7 +31,7 @@ function Laptop() {
           scale={0.3}
         />
       </Float>
-      <Float>
+      <Float speed={2}>
         <primitive
           object={laptop}
           ref={laptopRef}
