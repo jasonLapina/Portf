@@ -3,7 +3,7 @@ import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import MotionBox from "./UI/MotionBox";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Float, OrbitControls, useGLTF } from "@react-three/drei";
 import { TextureLoader } from "three";
 import * as THREE from "three";
 import { easing } from "maath";
@@ -124,7 +124,7 @@ function Hero() {
         </HStack>
       </Box>
 
-      {/* <MotionBox
+      <MotionBox
         h={{ md: "90%", base: "30%" }}
         maxH='800px'
         aspectRatio='1/1'
@@ -144,10 +144,12 @@ function Hero() {
           y: 0,
         }}
         transition={{ duration: 1, delay: 0.8 }}
-      /> */}
-      <Canvas>
-        <HeroImg />
-      </Canvas>
+      />
+      <Box pos='absolute' zIndex={99} w='100%' h='100%'>
+        <Canvas>
+          <HeroImg />
+        </Canvas>
+      </Box>
     </Center>
   );
 }
@@ -157,26 +159,55 @@ export default Hero;
 function HeroImg() {
   // const texture = useLoader(TextureLoader, 'path/to/your/texture.jpg');
   const texture = useLoader(TextureLoader, "/assets/hero-me.png");
-
   const meshRef = useRef();
+  const react = useGLTF(
+    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/react-logo/model.gltf"
+  );
+  const node = useGLTF(
+    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/node/model.gltf"
+  );
+
+  const reactRef = useRef();
+  const nodeRef = useRef();
 
   useFrame((state, delta) => {
-    easing.dampE(
-      meshRef.current.rotation,
-      [-state.pointer.y / 10, state.pointer.x / 10, 0],
-      0.25,
-      delta
-    );
+    // easing.dampE(
+    //   meshRef.current.rotation,
+    //   [-state.pointer.y / 10, state.pointer.x / 10, 0],
+    //   0.25,
+    //   delta
+    // );
+
+    reactRef.current.rotation.y += delta;
+    nodeRef.current.rotation.y += delta;
   });
   return (
     <>
       {/* <OrbitControls /> */}
+
       <ambientLight intensity={1} />
-      <directionalLight intensity={2} position={[0, -10, 2]} color='#ff00a0' />
-      <mesh ref={meshRef}>
+      <directionalLight intensity={2} position={[-3, -10, 1]} color='#ff00a0' />
+      <directionalLight intensity={2} position={[3, 10, 1]} color='cyan' />
+      {/* <mesh ref={meshRef}>
         <circleGeometry args={[3, 64]} />
         <meshStandardMaterial transparent map={texture} />
-      </mesh>
+      </mesh> */}
+      <Float speed={2}>
+        <primitive
+          ref={reactRef}
+          scale={0.4}
+          position={[-1.65, 1, 1]}
+          object={react.scene}
+        />
+      </Float>
+      <Float speed={2}>
+        <primitive
+          ref={nodeRef}
+          scale={0.4}
+          position={[1.4, 1.5, 1]}
+          object={node.scene}
+        />
+      </Float>
     </>
   );
 }
