@@ -14,13 +14,14 @@ import { DownloadIcon } from "@chakra-ui/icons";
 function Navbar() {
   const sections = [
     { label: "Home", icon: BiSolidHome },
-    {
-      label: "Projects",
-      icon: BiSolidFolder,
-    },
+
     {
       label: "Skills",
       icon: BiSolidWrench,
+    },
+    {
+      label: "Projects",
+      icon: BiSolidFolder,
     },
     {
       label: "About",
