@@ -104,9 +104,7 @@ function WhatIDo() {
           <VStack key={i} data-aos='fade-up'>
             <Image maxW='200px' h='160px' p='16px' src={item.img} />
             <Text
-              bgGradient={`linear(${
-                i === 0 ? "cyan,#ff00a0" : "#ff00a0,cyan"
-              })`}
+              bgGradient={`linear(${"cyan 30%,#ff00a0"})`}
               bgClip='text'
               fontSize='32px'
               fontWeight='semibold'
