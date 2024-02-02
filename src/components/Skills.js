@@ -41,7 +41,7 @@ function Skills() {
         <Box pos='absolute' w='100%' h='100%'></Box>
         <MySection heading='skills'>
           {/* <MyTypewriter words={["My tech stack"]} /> */}
-          <TextHeading text={"My tech stack"} />
+          <TextHeading text={"Tech Stack"} />
           <Center pos='relative' my='80px'>
             <Box pos='absolute' w='100%' h='100%'>
               <Canvas>
