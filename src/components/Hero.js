@@ -2,11 +2,9 @@ import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
 
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import MotionBox from "./UI/MotionBox";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei";
-import { TextureLoader } from "three";
-import * as THREE from "three";
-import { easing } from "maath";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Environment, Float, useGLTF } from "@react-three/drei";
+
 import { useRef } from "react";
 
 function Hero() {
@@ -158,8 +156,7 @@ export default Hero;
 
 function HeroImg() {
   // const texture = useLoader(TextureLoader, 'path/to/your/texture.jpg');
-  const texture = useLoader(TextureLoader, "/assets/hero-me.png");
-  const meshRef = useRef();
+
   const react = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/react-logo/model.gltf"
   );
@@ -171,26 +168,15 @@ function HeroImg() {
   const nodeRef = useRef();
 
   useFrame((state, delta) => {
-    // easing.dampE(
-    //   meshRef.current.rotation,
-    //   [-state.pointer.y / 10, state.pointer.x / 10, 0],
-    //   0.25,
-    //   delta
-    // );
-
     reactRef.current.rotation.y += delta;
     nodeRef.current.rotation.y += delta;
   });
   return (
     <>
-      {/* <OrbitControls /> */}
       <Environment preset='city' />
       <ambientLight intensity={1} />
       <directionalLight color='cyan' intensity={5} position={[0, 1, 10]} />
-      {/* <mesh ref={meshRef}>
-        <circleGeometry args={[3, 64]} />
-        <meshStandardMaterial transparent map={texture} />
-      </mesh> */}
+
       <Float speed={2}>
         <primitive
           ref={reactRef}

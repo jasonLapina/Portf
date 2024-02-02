@@ -9,7 +9,6 @@ import {
 import MySection from "./UI/MySection";
 import Slider from "react-slick";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-import MyTypewriter from "./UI/MyTypewriter";
 import TextHeading from "./3d/3DHeading";
 
 function About() {

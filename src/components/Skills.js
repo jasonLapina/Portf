@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import MySection from "./UI/MySection";
 
-import MyTypewriter from "./UI/MyTypewriter";
 import useSkills from "../hooks/useSkills";
 import { apiURL } from "../utils/config";
 

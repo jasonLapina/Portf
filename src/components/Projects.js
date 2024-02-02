@@ -2,7 +2,6 @@ import { Box, Button, Flex, HStack, Image, Text } from "@chakra-ui/react";
 import MySection from "./UI/MySection";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-import MyTypewriter from "./UI/MyTypewriter";
 import MotionBox from "./UI/MotionBox";
 import useProjects from "../hooks/useProjects";
 import { apiURL } from "../utils/config";
