@@ -154,6 +154,9 @@ function Hero() {
         }}
         transition={{ duration: 1, delay: 1.6 }}
         pos='absolute'
+        zIndex={2}
+        w='100%'
+        h='100%'
       >
         <Canvas>
           <HeroImg />
