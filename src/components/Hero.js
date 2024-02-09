@@ -53,7 +53,7 @@ function Hero() {
         >
           Web{" "}
           <Box as='span' bgColor='#ff00a0'>
-            {text}
+            Developer.
           </Box>
           <Cursor cursorBlinking cursorStyle='_' cursorColor='#ff00a0' />
         </Text>
@@ -154,9 +154,6 @@ function Hero() {
         }}
         transition={{ duration: 1, delay: 1.6 }}
         pos='absolute'
-        zIndex={99}
-        w='100%'
-        h='100%'
       >
         <Canvas>
           <HeroImg />
