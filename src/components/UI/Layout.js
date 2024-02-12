@@ -4,6 +4,7 @@ function Layout() {
   return (
     <Box overflowX='hidden' color='white' bgColor='rgba(0,0,0,.6)'>
       <Outlet />
+
       <Box
         zIndex={-2}
         as='video'
@@ -15,6 +16,10 @@ function Layout() {
         left='0'
         poster='/assets/hero-poster.png'
         filter='grayscale(.5)'
+        objectFit='cover'
+        h='100vh'
+        w='100%'
+        // h={{ base: "100%" }}
       >
         <source src='/assets/hero-bg.mp4' />
       </Box>
