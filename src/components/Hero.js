@@ -1,6 +1,6 @@
 import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
 
-import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { Cursor } from "react-simple-typewriter";
 import MotionBox from "./UI/MotionBox";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Float, useGLTF } from "@react-three/drei";
@@ -8,11 +8,11 @@ import { Environment, Float, useGLTF } from "@react-three/drei";
 import { Suspense, useRef } from "react";
 
 function Hero() {
-  const [text] = useTypewriter({
-    words: ["Designer.", "Developer."],
-    loop: 0,
-    typeSpeed: 50,
-  });
+  // const [text] = useTypewriter({
+  //   words: ["Designer.", "Developer."],
+  //   loop: 0,
+  //   typeSpeed: 50,
+  // });
 
   return (
     <Center
