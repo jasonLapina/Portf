@@ -14,7 +14,7 @@ function Layout() {
         top='0'
         left='0'
         poster='/assets/hero-poster.png'
-        filter='grayscale(1)'
+        filter='grayscale(.5)'
       >
         <source src='/assets/hero-bg.mp4' />
       </Box>

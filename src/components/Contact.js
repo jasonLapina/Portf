@@ -31,7 +31,7 @@ function Contact() {
                   borderRadius='full'
                   color='linkedin.500'
                   bgColor='white'
-                  filter='drop-shadow(2px 2px 80px #ff00a0)'
+                  filter='drop-shadow(2px 2px 80px magenta)'
                 />
               </a>
               <a
@@ -45,7 +45,7 @@ function Contact() {
                   borderRadius='full'
                   color='red.500'
                   bgColor='white'
-                  filter='drop-shadow(2px 2px 80px #ff00a0)'
+                  filter='drop-shadow(2px 2px 80px magenta)'
                 />
               </a>
             </HStack>
@@ -66,7 +66,7 @@ function Contact() {
                   bgColor='white'
                   right='59px'
                   top='214px'
-                  filter='drop-shadow(2px 2px 80px #ff00a0)'
+                  filter='drop-shadow(2px 2px 80px magenta)'
                 />
               </a>
               <a href='mailto:lapina.jason@gmail.com'>
@@ -79,7 +79,7 @@ function Contact() {
                   bgColor='white'
                   right='183px'
                   top='214px'
-                  filter='drop-shadow(2px 2px 80px #ff00a0)'
+                  filter='drop-shadow(2px 2px 80px magenta)'
                 />
               </a>
             </>

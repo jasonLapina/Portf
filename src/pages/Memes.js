@@ -18,7 +18,7 @@ function Memes() {
             words={["PEEETAAAA"]}
             cursor
             cursorBlinking
-            cursorColor='#ff00a0'
+            cursorColor='magenta'
             cursorStyle='_'
             loop={0}
           />

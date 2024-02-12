@@ -21,7 +21,7 @@ function Hero() {
       h={{ base: "70vh", md: "100vh" }}
       mb={{ base: "-120px" }}
       bgImage={
-        "linear-gradient(to bottom, rgba(0,0,0,.1), #28282B), url('/assets/home-bg.jpg')"
+        "linear-gradient(to bottom, rgba(0,0,0,.5), rgba(255,0,255,.1)), url('/assets/home-bg.jpg')"
       }
       bgSize='cover'
     >
@@ -52,10 +52,10 @@ function Hero() {
           fontSize={{ base: "19px", md: "20px" }}
         >
           Web{" "}
-          <Box as='span' bgColor='#ff00a0'>
+          <Box as='span' bgColor='magenta'>
             Developer.
           </Box>
-          <Cursor cursorBlinking cursorStyle='_' cursorColor='#ff00a0' />
+          <Cursor cursorBlinking cursorStyle='_' cursorColor='magenta' />
         </Text>
       </MotionBox>
 
@@ -71,13 +71,13 @@ function Hero() {
           borderRadius='20px'
           borderWidth='2px'
           variant='outline'
-          borderColor='#ff00a0'
-          filter='drop-shadow(1px 1px 2px #ff00a0)'
+          borderColor='magenta'
+          filter='drop-shadow(1px 1px 2px magenta)'
           color='white'
           transition='all .4s'
           _hover={{
             borderColor: "white",
-            color: "#ff00a0",
+            color: "magenta",
           }}
           onClick={() => {
             const section = document.getElementById("Projects");
@@ -104,7 +104,7 @@ function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             filter='drop-shadow(2px 2px 8px cyan)'
-            bgGradient='linear(cyan,#ff00a0)'
+            bgGradient='linear(cyan,magenta)'
             bgClip='text'
           >
             DEVE
@@ -114,7 +114,7 @@ function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             filter='drop-shadow(2px 2px 8px cyan)'
-            bgGradient='linear(cyan,#ff00a0)'
+            bgGradient='linear(cyan,magenta)'
             bgClip='text'
           >
             LOPER

@@ -71,7 +71,7 @@ function Projects() {
   if (isLoading) return <div />;
 
   return (
-    <Box id='Projects'>
+    <Box mb='200px' id='Projects'>
       <MySection heading='projects'>
         {/* <MyTypewriter words={["Featured Projects"]} /> */}
         <TextHeading text={"Work"} />
@@ -115,9 +115,9 @@ function Projects() {
                     {tasks.map((t) => (
                       <Box
                         key={name + t}
-                        bgColor={t === "Designed" ? "#ff00a0" : "cyan"}
+                        bgColor={t === "Designed" ? "magenta" : "cyan"}
                         filter={`drop-shadow(2px 2px 4px  ${
-                          t === "Designed" ? "#ff00a0" : "cyan"
+                          t === "Designed" ? "magenta" : "cyan"
                         })`}
                         borderRadius='10px'
                         px='8px'

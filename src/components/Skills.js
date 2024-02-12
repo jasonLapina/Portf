@@ -1,12 +1,4 @@
-import {
-  Box,
-  Center,
-  Grid,
-  Image,
-  Text,
-  Tooltip,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Center, Image, Tooltip } from "@chakra-ui/react";
 import MySection from "./UI/MySection";
 
 import useSkills from "../hooks/useSkills";
@@ -16,19 +8,6 @@ import Laptop from "./3d/Laptop";
 import { Canvas } from "@react-three/fiber";
 import TextHeading from "./3d/3DHeading";
 
-const genSkills = [
-  {
-    title: "Design",
-    text: "An expert at web & mobile design that finds the perfect balance between aesthetic and user experience. I use figma for wireframing and high-fidelity prototypes.",
-    img: "/assets/skills/design.svg",
-  },
-  {
-    title: "Develop",
-    text: "An experienced web developer that specializes on the front-end. Mastery of HTML, CSS, Javascript, and it's frameworks such as React and Next.js",
-    img: "/assets/skills/develop.svg",
-  },
-];
-
 function Skills() {
   const { data, isLoading } = useSkills();
 
@@ -36,8 +15,8 @@ function Skills() {
 
   return (
     <>
-      <Box id='Skills' pos='relative'>
-        <Box pos='absolute' w='100%' h='100%'></Box>
+      <Box id='Skills' mb='200px' pos='relative'>
+        {/* <Box pos='absolute' w='100%' h='100%'></Box> */}
         <MySection heading='skills'>
           {/* <MyTypewriter words={["My tech stack"]} /> */}
           <TextHeading text={"Tech Stack"} />
@@ -51,7 +30,7 @@ function Skills() {
               data-aos='fade-up'
               src='/assets/skills-invo.png'
               borderRadius='full'
-              filter={`drop-shadow(2px 2px 20px #ff00a0)`}
+              filter={`drop-shadow(2px 2px 20px magenta)`}
               maxW={{ base: "400px", md: "700px", lg: "1000px" }}
             />
             {data.map((item, i) => (
@@ -85,7 +64,7 @@ function Skills() {
               </Tooltip>
             ))}
           </Center>
-          <WhatIDo />
+          {/* <WhatIDo /> */}
         </MySection>
       </Box>
     </>
@@ -94,28 +73,28 @@ function Skills() {
 
 export default Skills;
 
-function WhatIDo() {
-  return (
-    <Box mt='80px'>
-      {/* <MyTypewriter words={["What I do"]} /> */}
-      <Grid gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }} rowGap='40px'>
-        {genSkills.map((item, i) => (
-          <VStack key={i} data-aos='fade-up'>
-            <Image maxW='200px' h='160px' p='16px' src={item.img} />
-            <Text
-              bgGradient={`linear(${"cyan 30%,#ff00a0"})`}
-              bgClip='text'
-              fontSize='32px'
-              fontWeight='semibold'
-            >
-              {item.title}
-            </Text>
-            <Text maxW='400px' mx='auto' opacity='.6'>
-              {item.text}
-            </Text>
-          </VStack>
-        ))}
-      </Grid>
-    </Box>
-  );
-}
+// function WhatIDo() {
+//   return (
+//     <Box mt='80px'>
+//       {/* <MyTypewriter words={["What I do"]} /> */}
+//       <Grid gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }} rowGap='40px'>
+//         {genSkills.map((item, i) => (
+//           <VStack key={i} data-aos='fade-up'>
+//             <Image maxW='200px' h='160px' p='16px' src={item.img} />
+//             <Text
+//               bgGradient={`linear(${"cyan 30%,magenta"})`}
+//               bgClip='text'
+//               fontSize='32px'
+//               fontWeight='semibold'
+//             >
+//               {item.title}
+//             </Text>
+//             <Text maxW='400px' mx='auto' opacity='.6'>
+//               {item.text}
+//             </Text>
+//           </VStack>
+//         ))}
+//       </Grid>
+//     </Box>
+//   );
+// }

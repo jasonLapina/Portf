@@ -1,9 +1,10 @@
 :root {
   --maxW: 1440px;
+  --primary: magenta;
 }
 
 .slick-dots li.slick-active button:before {
-  color: #ff00a0;
+  color: magenta;
   opacity: 1;
 }
 

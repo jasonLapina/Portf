@@ -164,12 +164,12 @@ const NextArr = ({ onClick }) => {
       fontSize='32px'
       aspectRatio='1/1'
       p='24px'
-      borderColor='#ff00a0'
+      borderColor='magenta'
       borderWidth='2px'
-      color='#ff00a0'
+      color='magenta'
       transition='all .4s'
       _hover={{
-        filter: "drop-shadow(2px 2px 8px #ff00a0)",
+        filter: "drop-shadow(2px 2px 8px magenta)",
       }}
     >
       <ArrowForwardIcon />
@@ -185,7 +185,7 @@ const PrevArr = ({ onClick }) => {
       left='8px'
       transition='all .4s'
       _hover={{
-        filter: "drop-shadow(2px 2px 8px #ff00a0)",
+        filter: "drop-shadow(2px 2px 8px magenta)",
       }}
       onClick={onClick}
       pos='absolute'
@@ -196,9 +196,9 @@ const PrevArr = ({ onClick }) => {
       fontSize='32px'
       aspectRatio='1/1'
       p='24px'
-      borderColor='#ff00a0'
+      borderColor='magenta'
       borderWidth='2px'
-      color='#ff00a0'
+      color='magenta'
     >
       <ArrowBackIcon />
     </Button>
