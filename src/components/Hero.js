@@ -1,6 +1,4 @@
-import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
-
-import MotionBox from "./UI/MotionBox";
+import { Box, Center, HStack } from "@chakra-ui/react";
 
 function Hero() {
   return (
@@ -13,40 +11,6 @@ function Hero() {
       bgSize='cover'
       bgPos='center'
     >
-      <MotionBox
-        pos='absolute'
-        bottom={{ base: "15%", md: "18%" }}
-        left='50%'
-        transform='translateX(-50%)'
-        zIndex={5}
-      >
-        {/* <Button
-          p='16px 32px'
-          borderRadius='20px'
-          borderWidth='2px'
-          variant='outline'
-          borderColor='magenta'
-          filter='drop-shadow(1px 1px 2px magenta)'
-          color='white'
-          transition='all .4s'
-          _hover={{
-            borderColor: "white",
-            color: "magenta",
-          }}
-          onClick={() => {
-            const section = document.getElementById("Projects");
-            const offset = 40;
-            const scrollPos = section.offsetTop - offset;
-            window.scrollTo({
-              top: scrollPos,
-              behavior: "smooth",
-            });
-          }}
-        >
-          See my work below
-        </Button> */}
-      </MotionBox>
-
       <Box
         fontWeight='bolder'
         pos='absolute'
@@ -58,9 +22,9 @@ function Hero() {
             bgClip='text'
             color='transparent'
             style={{
-              WebkitTextStroke: "2px var(--primary)",
+              WebkitTextStroke: ".2vw var(--primary)",
             }}
-            filter='drop-shadow(4px 4px white)'
+            filter='drop-shadow(.2vw .2vw white)'
           >
             JASON
           </Box>
@@ -74,7 +38,6 @@ function Hero() {
           </Box>
         </HStack>
       </Box>
-      <Text></Text>
     </Center>
   );
 }
