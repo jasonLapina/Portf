@@ -1,20 +1,37 @@
 import { Box, Center, HStack } from "@chakra-ui/react";
+import MotionBox from "./UI/MotionBox";
+// import { useScroll } from "@react-three/drei";
+import { useTransform, useScroll } from "framer-motion";
 
 function Hero() {
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 1200], [1, 0]);
+  const offset = useTransform(scrollY, [0, 800], ["50%", "80%"]);
   return (
-    <Center
+    <MotionBox
       id='Home'
+      display='flex'
+      justifyContent='center'
+      alignItems='center'
+      alignContent='center'
       pos='relative'
       h={{ base: "70vh", md: "100vh" }}
-      mb={{ base: "-120px" }}
+      mb={{ base: "-240px" }}
       bgImage="linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.6)),url('/assets/retrowave.jpg') "
       bgSize='cover'
       bgPos='center'
+      style={{
+        opacity: opacity,
+      }}
     >
-      <Box
+      <MotionBox
         fontWeight='bolder'
         pos='absolute'
         fontSize={{ base: "9vw", md: "12vw" }}
+        transform='translateY(-50%)'
+        style={{
+          top: offset,
+        }}
       >
         <HStack gap='2vw'>
           <Box
@@ -37,8 +54,8 @@ function Hero() {
             LAPINA
           </Box>
         </HStack>
-      </Box>
-    </Center>
+      </MotionBox>
+    </MotionBox>
   );
 }
 
