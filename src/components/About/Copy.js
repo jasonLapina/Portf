@@ -101,25 +101,33 @@ function Intro() {
       </Heading>
       <HStack fontStyle='italic' gap='8px'>
         <Text letterSpacing='widest' fontWeight='bold' color='var(--primary)'>
-          24 years old
+          Summary
         </Text>
-        <Text color='#999'>/</Text>
+        <Text color='#aaa'>/</Text>
         <Text letterSpacing='widest' fontWeight='bold' color='var(--primary)'>
-          Self-taught
+          Skills
         </Text>
-        <Text color='#999'>/</Text>
+        <Text color='#aaa'>/</Text>
         <Text letterSpacing='widest' fontWeight='bold' color='var(--primary)'>
-          Driven
+          Background
         </Text>
       </HStack>
-      <Text mt='40px' color='#999'>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum ex nihil
-        unde earum, cum quas quae, assumenda error beatae eveniet mollitia
-        veniam. Consectetur earum, inventore recusandae animi nulla laudantium
-        voluptatem! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et
-        voluptates cumque id neque, optio ad pariatur rem nostrum ipsa quia
-        quasi repellendus officia tenetur possimus enim minus eius suscipit ea?
-      </Text>
+      <VStack mt='24px' color='#aaa'>
+        <Text>
+          I'm an experienced frontend developer with a strong proficiency in the{" "}
+          <strong>MERN</strong> stack and basic <strong>AWS</strong> services. I
+          also have a very strong sense of <strong>UI/UX</strong> design.
+        </Text>
+        <Text>
+          Although I attended the <strong>University of the Philippines</strong>
+          , I am largely self-taught, which is proof in itself that I can learn
+          and adapt to new technology.
+        </Text>
+        <Text>
+          Outside of coding, I typically spend my time <strong>learning</strong>
+          , playing video games, watching movies or series, and working out.
+        </Text>
+      </VStack>
     </Box>
   );
 }
@@ -157,7 +165,7 @@ function Skills() {
             <Text mb='8px' fontSize='24px' fontWeight='bold'>
               {s.title}
             </Text>
-            <Text color='#999'>{s.text}</Text>
+            <Text color='#aaa'>{s.text}</Text>
           </Box>
         ))}
       </Grid>

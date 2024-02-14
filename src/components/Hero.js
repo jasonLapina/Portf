@@ -5,7 +5,7 @@ import { useTransform, useScroll } from "framer-motion";
 
 function Hero() {
   const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 1200], [1, 0]);
+
   const offset = useTransform(scrollY, [0, 800], ["50%", "80%"]);
   return (
     <MotionBox
@@ -20,9 +20,6 @@ function Hero() {
       bgImage="linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.6)),url('/assets/retrowave.jpg') "
       bgSize='cover'
       bgPos='center'
-      style={{
-        opacity: opacity,
-      }}
     >
       <MotionBox
         fontWeight='bolder'
