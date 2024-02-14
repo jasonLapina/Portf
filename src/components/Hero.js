@@ -1,4 +1,4 @@
-import { Box, Center, HStack } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 import MotionBox from "./UI/MotionBox";
 // import { useScroll } from "@react-three/drei";
 import { useTransform, useScroll } from "framer-motion";
@@ -31,8 +31,17 @@ function Hero() {
         }}
       >
         <HStack gap='2vw'>
-          <Box
+          <MotionBox
             // bgGradient='linear(cyan,magenta)'
+            initial={{
+              transform: "translateY(-120px)",
+            }}
+            animate={{
+              transform: "translateY(0)",
+            }}
+            transition={{
+              duration: 1.4,
+            }}
             bgClip='text'
             color='transparent'
             style={{
@@ -41,15 +50,24 @@ function Hero() {
             filter='drop-shadow(.2vw .2vw white)'
           >
             JASON
-          </Box>
-          <Box
+          </MotionBox>
+          <MotionBox
+            initial={{
+              transform: "translateY(120px)",
+            }}
+            animate={{
+              transform: "translateY(0)",
+            }}
+            transition={{
+              duration: 1.4,
+            }}
             bgImage='url("/assets/home-bg.jpg")'
             bgPos='bottom'
             bgSize='cover'
             bgClip='text'
           >
             LAPINA
-          </Box>
+          </MotionBox>
         </HStack>
       </MotionBox>
     </MotionBox>
