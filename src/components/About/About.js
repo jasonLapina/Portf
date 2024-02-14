@@ -43,7 +43,7 @@ function About() {
         <Box
           pos='absolute'
           h='40px'
-          bottom='0'
+          bottom='-2px'
           w='100%'
           bgGradient='linear(to top, #222, rgba(28,30,31,.1))'
         />
