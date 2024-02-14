@@ -25,7 +25,8 @@ function About() {
         mx='auto'
         gridTemplateColumns={{ md: "1fr 1fr", base: "1fr" }}
         h='620px'
-        bgColor='#222'
+        // bgColor='#222'
+        backdropFilter='blur(8px)'
         pos='relative'
         // mb='200px'
         mt='40px'
@@ -37,15 +38,17 @@ function About() {
           pos='absolute'
           h='40px'
           top='0'
-          w='100%'
-          bgGradient='linear(to bottom, #222, rgba(28,30,31,.1))'
+          w='50%'
+          bgGradient='linear(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))'
+          right='0'
         />
         <Box
           pos='absolute'
           h='40px'
           bottom='-2px'
-          w='100%'
-          bgGradient='linear(to top, #222, rgba(28,30,31,.1))'
+          w='50%'
+          right='0'
+          bgGradient='linear(to top, rgba(0,0,0,1), rgba(0,0,0,0))'
         />
         <Profile />
         <Copy />

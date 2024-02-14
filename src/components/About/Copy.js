@@ -19,12 +19,23 @@ import Background from "./Background";
 function Copy() {
   return (
     <VStack
-      css={{ "&::-webkit-scrollbar": { width: "0" } }}
+      css={{
+        "&::-webkit-scrollbar": {
+          width: "12px" /* width of the scrollbar */,
+        },
+        "&::-webkit-scrollbar-thumb": {
+          backgroundColor: "magenta" /* color of the thumb */,
+        },
+        "&::-webkit-scrollbar-track": {
+          backgroundColor: "#f1f1f1" /* color of the track */,
+        },
+      }}
       align='normal'
       pr='80px'
       py='40px'
       overflow='auto'
       gap='48px'
+      className='copy'
     >
       <Intro />
       <Skills />
