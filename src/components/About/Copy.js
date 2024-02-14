@@ -79,22 +79,22 @@ function Skills() {
     {
       icon: FaDesktop,
       title: "development",
-      text: "Building a custom tailored solution based on your technical specification.",
+      text: "Efficiently convert design into code that's focused on optimization and maintinability.",
     },
     {
       icon: FaPaintBrush,
       title: "design",
-      text: "Building a custom tailored solution based on your technical specification.",
+      text: "Prioritizes a good user experience but with an aesthetic user interface in mind.",
     },
     {
       icon: FaRocket,
       title: "optimization",
-      text: "Building a custom tailored solution based on your technical specification.",
+      text: "Ensures that the application is optimized during and after coding the project.",
     },
     {
       icon: FaHandsHelping,
       title: "collaboration",
-      text: "Building a custom tailored solution based on your technical specification.",
+      text: "Works well with other developers, designers, project managers, and even the client/s.",
     },
   ];
   return (
