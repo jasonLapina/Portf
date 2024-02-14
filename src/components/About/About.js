@@ -1,12 +1,21 @@
-import { Box, Grid, HStack, Icon, Text, VStack } from "@chakra-ui/react";
 import {
+  Box,
+  Grid,
+  HStack,
+  Icon,
+  Text,
+  Tooltip,
+  VStack,
+} from "@chakra-ui/react";
+import {
+  FaCloudDownloadAlt,
   FaFacebookF,
-  FaFileDownload,
   FaGithub,
   FaLinkedinIn,
 } from "react-icons/fa";
 import Copy from "./Copy";
 import TextHeading from "../3d/3DHeading";
+
 function About() {
   return (
     <>
@@ -49,17 +58,17 @@ function Profile() {
   const socMed = [
     {
       icon: FaGithub,
-      link: "1",
+      link: "https://github.com/jasonLapina",
       color: "white",
     },
     {
       icon: FaLinkedinIn,
-      link: "2",
+      link: "https://www.linkedin.com/in/dev-jason/",
       color: "#0e76a8 ",
     },
     {
       icon: FaFacebookF,
-      link: "3",
+      link: "https://www.facebook.com/klemekek/",
       color: "#1877F2",
     },
   ];
@@ -74,17 +83,43 @@ function Profile() {
           justifyContent='center'
           color='var(--primary)'
         >
-          <Box fontWeight='bolder' fontSize='32px' as='span'>
+          <Box
+            cursor='pointer'
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+            fontWeight='bolder'
+            fontSize='32px'
+            as='span'
+          >
             JL
           </Box>
           <VStack gap='24px'>
             {socMed.map((s) => (
-              <a key={s.link} href=''>
+              <Box
+                as='a'
+                key={s.link}
+                href={s.link}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <Icon boxSize='30px' color={s.color} as={s.icon} />
-              </a>
+              </Box>
             ))}
           </VStack>
-          <Icon cursor='pointer' boxSize='32px' as={FaFileDownload} />
+          <Tooltip label='Download full resume' placement='top' hasArrow>
+            <span>
+              <Icon
+                className='download-icon'
+                cursor='pointer'
+                boxSize='32px'
+                as={FaCloudDownloadAlt}
+              />
+            </span>
+          </Tooltip>
         </Grid>
       </Box>
       <Box

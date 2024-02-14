@@ -13,3 +13,17 @@
   opacity: 0.4;
   font-size: 12px;
 }
+
+.download-icon {
+  animation: bounce 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20%);
+    filter: drop-shadow(0 2px 8px white);
+  }
+}
