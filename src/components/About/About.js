@@ -114,14 +114,14 @@ function Profile() {
             ))}
           </VStack>
           <Tooltip label='Download full resume' placement='top' hasArrow>
-            <span>
+            <a href='Jason Lapina - Resume.pdf' download>
               <Icon
                 className='download-icon'
                 cursor='pointer'
                 boxSize='32px'
                 as={FaCloudDownloadAlt}
               />
-            </span>
+            </a>
           </Tooltip>
         </Grid>
       </Box>
