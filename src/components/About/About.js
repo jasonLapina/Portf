@@ -24,14 +24,14 @@ function About() {
         maxW='1280px'
         mx='auto'
         gridTemplateColumns={{ md: "1fr 1fr", base: "1fr" }}
-        // h='70vh'
         h='620px'
         bgColor='#222'
         pos='relative'
-        mb='200px'
+        // mb='200px'
         mt='40px'
         px={{ base: "8px", md: "0" }}
         gap='16px'
+        mb='4vw'
       >
         <Box
           pos='absolute'

@@ -15,7 +15,7 @@ function Skills() {
 
   return (
     <>
-      <Box id='Skills' mb='200px' pos='relative'>
+      <Box id='Skills' mb={{ base: "2vw", md: "200px" }} pos='relative'>
         {/* <Box pos='absolute' w='100%' h='100%'></Box> */}
         <MySection heading='skills'>
           {/* <MyTypewriter words={["My tech stack"]} /> */}

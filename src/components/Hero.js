@@ -16,7 +16,7 @@ function Hero() {
       alignContent='center'
       pos='relative'
       h={{ base: "70vh", md: "100vh" }}
-      mb={{ base: "-240px" }}
+      mb={{ base: "-30vh", md: "-240px" }}
       bgImage="linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.6)),url('/assets/retrowave.jpg') "
       bgSize='cover'
       bgPos='center'
