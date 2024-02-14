@@ -8,7 +8,13 @@ import {
   Grid,
 } from "@chakra-ui/react";
 
-import { FaBriefcase, FaDesktop, FaGraduationCap } from "react-icons/fa";
+import {
+  FaDesktop,
+  FaHandsHelping,
+  FaPaintBrush,
+  FaRocket,
+} from "react-icons/fa";
+import Background from "./Background";
 
 function Copy() {
   return (
@@ -28,70 +34,6 @@ function Copy() {
 }
 
 export default Copy;
-
-function Background() {
-  return (
-    <Box>
-      <Heading mb='24px'>my background</Heading>
-      <HStack mb='16px'>
-        <Icon boxSize='24px' as={FaGraduationCap} />
-        <Text fontSize='24px' color='var(--primary)' fontWeight='semibold'>
-          Education
-        </Text>
-      </HStack>
-      <Text mb='24px'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ex
-        assumenda enim est delectus accusantium quaerat autem tempore, ut itaque
-        dignissimos molestiae cum aliquid fugiat ducimus voluptate provident
-        reiciendis error?
-      </Text>
-      <HStack>
-        <Icon boxSize='24px' as={FaBriefcase} />
-        <Text fontSize='24px' color='var(--primary)' fontWeight='semibold'>
-          Experience
-        </Text>
-      </HStack>
-      <VStack align='normal' mt='16px'>
-        <Box>
-          <Text fontWeight='semibold' color='var(--primary)'>
-            2023 - Present
-          </Text>
-          <Text fontWeight='bold' fontSize='20px'>
-            Blink Creative Studio, Web Developer
-          </Text>
-          <Text>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Praesentium recusandae aspernatur quisquam.
-          </Text>
-        </Box>
-        <Box>
-          <Text fontWeight='semibold' color='var(--primary)'>
-            2022 - 2023
-          </Text>
-          <Text fontWeight='bold' fontSize='20px'>
-            Freelance, Web Developer
-          </Text>
-          <Text>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Praesentium recusandae aspernatur quisquam.
-          </Text>
-        </Box>
-        <Box>
-          <Text fontWeight='semibold' color='var(--primary)'>
-            2022 - 2023
-          </Text>
-          <Text fontWeight='bold' fontSize='20px'>
-            Freelance, Web Developer
-          </Text>
-          <Text>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Praesentium recusandae aspernatur quisquam.
-          </Text>
-        </Box>
-      </VStack>
-    </Box>
-  );
-}
 
 function Intro() {
   return (
@@ -137,35 +79,37 @@ function Skills() {
     {
       icon: FaDesktop,
       title: "development",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      text: "Building a custom tailored solution based on your technical specification.",
     },
     {
-      icon: FaDesktop,
+      icon: FaPaintBrush,
       title: "design",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      text: "Building a custom tailored solution based on your technical specification.",
     },
     {
-      icon: FaDesktop,
+      icon: FaRocket,
       title: "optimization",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      text: "Building a custom tailored solution based on your technical specification.",
     },
     {
-      icon: FaDesktop,
+      icon: FaHandsHelping,
       title: "collaboration",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      text: "Building a custom tailored solution based on your technical specification.",
     },
   ];
   return (
     <Box>
       <Heading mb='24px'>my skills</Heading>
-      <Grid gridTemplateColumns='1fr 1fr' gap='16px'>
+      <Grid gridTemplateColumns='1fr 1fr' columnGap='16px' rowGap='48px'>
         {skills.map((s) => (
           <Box key={s.title}>
             <Icon color='var(--primary)' mb='8px' boxSize='32px' as={s.icon} />
             <Text mb='8px' fontSize='24px' fontWeight='bold'>
               {s.title}
             </Text>
-            <Text color='#aaa'>{s.text}</Text>
+            <Text pr='16px' color='#aaa'>
+              {s.text}
+            </Text>
           </Box>
         ))}
       </Grid>
