@@ -44,13 +44,14 @@ function Background() {
         </Box>
         <Box>
           <Text fontWeight='semibold' color='var(--primary)'>
-            2022 - 2023
+            2022
           </Text>
           <Text fontWeight='bold' fontSize='20px'>
             Freelance, Frontend Developer
           </Text>
           <Text color='#aaa'>
-            Worked briefly as a freelance developer. Developed and deployed
+            Worked briefly as a freelance developer. Developed and deployed an
+            e-commerce project.
           </Text>
         </Box>
         <Box>
