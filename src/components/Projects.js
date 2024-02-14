@@ -71,7 +71,7 @@ function Projects() {
   if (isLoading) return <div />;
 
   return (
-    <Box mb='200px' id='Projects'>
+    <Box mb='15vh' id='Projects'>
       <MySection heading='projects'>
         {/* <MyTypewriter words={["Featured Projects"]} /> */}
         <TextHeading text={"Work"} />

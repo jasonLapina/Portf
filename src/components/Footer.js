@@ -5,7 +5,7 @@ function Footer() {
     <Box
       bgImage='linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))'
       minH='240px'
-      pb='200px'
+      pb='120px'
       pt='32px'
       px='8px'
     >

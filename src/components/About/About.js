@@ -18,7 +18,7 @@ import TextHeading from "../3d/3DHeading";
 
 function About() {
   return (
-    <Box px={{ base: "8px", md: "0px" }} id='About'>
+    <Box mb='15vh' px={{ base: "8px", md: "0px" }} id='About'>
       <TextHeading text={"Profile"} />
       <Grid
         maxW='1280px'
@@ -26,30 +26,15 @@ function About() {
         gridTemplateColumns={{ md: "1fr 1fr", base: "1fr" }}
         h='620px'
         // bgColor='#222'
-        backdropFilter='blur(8px)'
+        backdropFilter='blur(5px)'
         pos='relative'
         // mb='200px'
         mt='40px'
         px={{ base: "8px", md: "0" }}
         gap='16px'
-        mb='4vw'
+        mb='10vh'
+        bgColor='rgba(255,255,255,.05)'
       >
-        <Box
-          pos='absolute'
-          h='40px'
-          top='0'
-          w='50%'
-          bgGradient='linear(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))'
-          right='0'
-        />
-        <Box
-          pos='absolute'
-          h='40px'
-          bottom='-2px'
-          w='50%'
-          right='0'
-          bgGradient='linear(to top, rgba(0,0,0,1), rgba(0,0,0,0))'
-        />
         <Profile />
         <Copy />
       </Grid>
