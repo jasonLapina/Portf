@@ -18,18 +18,20 @@ import TextHeading from "../3d/3DHeading";
 
 function About() {
   return (
-    <Box id='About'>
+    <Box px={{ base: "8px", md: "0px" }} id='About'>
       <TextHeading text={"Profile"} />
       <Grid
         maxW='1280px'
         mx='auto'
-        gridTemplateColumns='1fr 1fr'
+        gridTemplateColumns={{ md: "1fr 1fr", base: "1fr" }}
         // h='70vh'
         h='620px'
         bgColor='#222'
         pos='relative'
         mb='200px'
         mt='40px'
+        px={{ base: "8px", md: "0" }}
+        gap='16px'
       >
         <Box
           pos='absolute'
@@ -82,6 +84,7 @@ function Profile() {
           gridTemplateRows='1fr 4fr 1fr'
           justifyContent='center'
           color='var(--primary)'
+          gap={{ base: "8px", md: "0" }}
         >
           <Box
             cursor='pointer'
@@ -146,7 +149,7 @@ function Profile() {
           bottom='80px'
           left='50%'
           transform='translateX(-50%)'
-          fontSize='48px'
+          fontSize={{ base: "32px", md: "48px" }}
           w='100%'
           textAlign='center'
         >
@@ -157,11 +160,13 @@ function Profile() {
           bottom='56px'
           left='50%'
           transform='translateX(-50%)'
-          fontSize='20px'
+          fontSize={{ md: "20px", base: "15px" }}
           fontStyle='italic'
           color='var(--primary)'
           fontWeight='bold'
           letterSpacing='widest'
+          w='100%'
+          textAlign='center'
         >
           Developer | Designer
         </Text>

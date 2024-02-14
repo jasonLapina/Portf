@@ -38,7 +38,7 @@ export default Copy;
 function Intro() {
   return (
     <Box borderBottom='solid 2px #666' pb='40px'>
-      <Heading fontSize='56px' mb='16px'>
+      <Heading fontSize={{ md: "56px", base: "40px" }} mb='16px'>
         about me
       </Heading>
       <HStack fontStyle='italic' gap='8px'>
@@ -100,7 +100,11 @@ function Skills() {
   return (
     <Box>
       <Heading mb='24px'>my skills</Heading>
-      <Grid gridTemplateColumns='1fr 1fr' columnGap='16px' rowGap='48px'>
+      <Grid
+        gridTemplateColumns={{ md: "1fr 1fr", base: "1fr" }}
+        columnGap='16px'
+        rowGap='48px'
+      >
         {skills.map((s) => (
           <Box key={s.title}>
             <Icon color='var(--primary)' mb='8px' boxSize='32px' as={s.icon} />
