@@ -18,7 +18,7 @@ import TextHeading from "../3d/3DHeading";
 
 function About() {
   return (
-    <>
+    <Box id='About'>
       <TextHeading text={"Profile"} />
       <Grid
         maxW='1280px'
@@ -48,7 +48,7 @@ function About() {
         <Profile />
         <Copy />
       </Grid>
-    </>
+    </Box>
   );
 }
 
