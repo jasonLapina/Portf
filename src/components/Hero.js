@@ -1,11 +1,10 @@
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
 import MotionBox from "./UI/MotionBox";
 // import { useScroll } from "@react-three/drei";
 import { useTransform, useScroll } from "framer-motion";
 
 function Hero() {
   const { scrollY } = useScroll();
-
   const offset = useTransform(scrollY, [0, 800], ["50%", "80%"]);
   return (
     <MotionBox
@@ -68,6 +67,7 @@ function Hero() {
           >
             LAPINA
           </MotionBox>
+          <HeroCopy />
         </HStack>
       </MotionBox>
     </MotionBox>
@@ -75,3 +75,80 @@ function Hero() {
 }
 
 export default Hero;
+
+function HeroCopy() {
+  const { scrollY } = useScroll();
+
+  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+  return (
+    <>
+      <MotionBox
+        textAlign='center'
+        w='100%'
+        pos='absolute'
+        fontSize='2vw'
+        top='0'
+        fontWeight='thin'
+        textShadow='1px 4px #004b99'
+        style={{ opacity: opacity }}
+        initial={{
+          opacity: 0,
+          transform: "translateY(-120px)",
+        }}
+        animate={{
+          opacity: 1,
+          transform: "translateY(0)",
+        }}
+        transition={{
+          duration: 1.2,
+          delay: 1,
+        }}
+      >
+        MERN Developer
+      </MotionBox>
+      <Center bottom='0' transform='translateX(-50%)' left='50%' pos='absolute'>
+        <MotionBox
+          role='button'
+          fontSize='20px'
+          bgColor='transparent'
+          px='32px'
+          color='white'
+          border='solid 2px magenta'
+          style={{
+            opacity: opacity,
+            transition: "all .3s",
+          }}
+          _hover={{
+            bgColor: "black",
+            color: "magenta",
+          }}
+          py='4px'
+          borderRadius='8px'
+          fontWeight='extrabold'
+          letterSpacing='wider'
+          onClick={() => {
+            const aboutSection = document.getElementById("About");
+            window.scrollTo({
+              top: aboutSection.offsetTop,
+              behavior: "smooth",
+            });
+          }}
+          initial={{
+            opacity: 0,
+            transform: "translateY(120px)",
+          }}
+          animate={{
+            opacity: 1,
+            transform: "translateY(0)",
+          }}
+          transition={{
+            duration: 1.2,
+            delay: 1,
+          }}
+        >
+          Learn more
+        </MotionBox>
+      </Center>
+    </>
+  );
+}
