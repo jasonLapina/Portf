@@ -61,10 +61,10 @@ function Hero() {
             transition={{
               duration: 1.4,
             }}
-            bgImage='url("/assets/home-bg.jpg")'
-            bgPos='bottom'
-            bgSize='cover'
+            bgImage='url("/assets/creation.jpg")'
             bgClip='text'
+            bgSize='cover'
+            bgPos='center'
           >
             LAPINA
           </MotionBox>
