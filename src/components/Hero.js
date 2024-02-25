@@ -1,4 +1,4 @@
-import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import MotionBox from "./UI/MotionBox";
 // import { useScroll } from "@react-three/drei";
 import { useTransform, useScroll } from "framer-motion";

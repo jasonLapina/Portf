@@ -1,4 +1,4 @@
-import { Box, Center, Skeleton, Spinner } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.css";
@@ -32,7 +32,9 @@ function App() {
         <Hero />
       </Box>
       <About />
+
       <Skills />
+
       <Projects />
       <Contact />
       <Footer />
