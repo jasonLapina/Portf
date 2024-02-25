@@ -53,7 +53,7 @@ function Navbar() {
       borderRadius='full'
       zIndex={5}
       left='50%'
-      bgColor='blackAlpha.600'
+      bgColor='rgba(255,255,255,.1)'
       transform='translateX(-50%)'
       backdropFilter='auto'
       backdropBlur='8px'

@@ -1,13 +1,13 @@
-import { HStack } from "@chakra-ui/react";
+import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
 import MotionBox from "./UI/MotionBox";
-// import { useScroll } from "@react-three/drei";
 import { useTransform, useScroll } from "framer-motion";
 
 function Hero() {
   const { scrollY } = useScroll();
   const offset = useTransform(scrollY, [0, 800], ["50%", "80%"]);
+  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
   return (
-    <MotionBox
+    <Box
       id='Home'
       display='flex'
       justifyContent='center'
@@ -18,10 +18,46 @@ function Hero() {
       mb={{ base: "-30vh", md: "-240px" }}
     >
       <MotionBox
+        style={{
+          opacity: opacity,
+        }}
+        fontSize='20px'
+        pos='absolute'
+        bottom='30%'
+      >
+        <Text textAlign='center' maxW='720px'>
+          I'm a web developer with a knack for quickly learning and implementing
+          new technologies to create innovative and efficient solutions.
+        </Text>
+        <Center>
+          <Button
+            transform='translateY(20px)'
+            _hover={{
+              color: "white",
+            }}
+            _active={{}}
+            variant='ghost'
+            color='var(--primary)'
+            fontSize='24px'
+            onClick={() => {
+              const scrollTo = document.getElementById("About");
+              const offset = 40;
+              const scrollPos = scrollTo.offsetTop - offset;
+              window.scrollTo({
+                top: scrollPos,
+                behavior: "smooth",
+              });
+            }}
+          >
+            Learn more
+          </Button>
+        </Center>
+      </MotionBox>
+      <MotionBox
         fontWeight='bolder'
         pos='absolute'
         fontSize={{ base: "9vw", md: "12vw" }}
-        transform='translateY(-50%)'
+        transform='translateY(-70%)'
         style={{
           top: offset,
         }}
@@ -43,10 +79,18 @@ function Hero() {
               WebkitTextStroke: ".2vw var(--primary)",
             }}
             filter='drop-shadow(.2vw .2vw white)'
+            bgImage='url(/assets/socrates.webp)'
+            bgSize='cover'
+            bgPos='center'
           >
             JASON
           </MotionBox>
+
           <MotionBox
+            style={{
+              WebkitTextStroke: ".2vw white",
+            }}
+            filter='drop-shadow(.2vw .2vw magenta)'
             initial={{
               transform: "translateY(120px)",
             }}
@@ -67,7 +111,7 @@ function Hero() {
           </MotionBox>
         </HStack>
       </MotionBox>
-    </MotionBox>
+    </Box>
   );
 }
 
