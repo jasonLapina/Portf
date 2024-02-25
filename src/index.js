@@ -7,9 +7,9 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import ReactGA from "react-ga4";
-import Blogs from "./pages/Blogs";
+
 import Layout from "./components/UI/Layout";
-import Memes from "./pages/Memes";
+
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const router = createBrowserRouter([
@@ -20,14 +20,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <App />,
-      },
-      {
-        path: "blogs",
-        element: <Blogs />,
-      },
-      {
-        path: "peter",
-        element: <Memes />,
       },
     ],
   },

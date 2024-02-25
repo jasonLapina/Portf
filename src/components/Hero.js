@@ -16,9 +16,6 @@ function Hero() {
       pos='relative'
       h={{ base: "70vh", md: "100vh" }}
       mb={{ base: "-30vh", md: "-240px" }}
-      bgImage="linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.6)),url('/assets/retrowave.jpg') "
-      bgSize='cover'
-      bgPos='center'
     >
       <MotionBox
         fontWeight='bolder'
@@ -31,7 +28,6 @@ function Hero() {
       >
         <HStack gap='2vw'>
           <MotionBox
-            // bgGradient='linear(cyan,magenta)'
             initial={{
               transform: "translateY(-120px)",
             }}
@@ -60,14 +56,15 @@ function Hero() {
             transition={{
               duration: 1.4,
             }}
-            bgImage='url("/assets/creation.jpg")'
+            bgGradient='linear(to right, rgba(0,0,0,.1), red)'
+            bgImage={`url("/assets/creation.webp")`}
+            bgColor='white'
             bgClip='text'
-            bgSize='cover'
             bgPos='center'
+            bgSize='cover'
           >
             LAPINA
           </MotionBox>
-          <HeroCopy />
         </HStack>
       </MotionBox>
     </MotionBox>
@@ -75,80 +72,3 @@ function Hero() {
 }
 
 export default Hero;
-
-function HeroCopy() {
-  const { scrollY } = useScroll();
-
-  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
-  return (
-    <>
-      <MotionBox
-        textAlign='center'
-        w='100%'
-        pos='absolute'
-        fontSize='2vw'
-        top='0'
-        fontWeight='thin'
-        textShadow='1px 4px #004b99'
-        style={{ opacity: opacity }}
-        initial={{
-          opacity: 0,
-          transform: "translateY(-120px)",
-        }}
-        animate={{
-          opacity: 1,
-          transform: "translateY(0)",
-        }}
-        transition={{
-          duration: 1.2,
-          delay: 1,
-        }}
-      >
-        MERN Developer
-      </MotionBox>
-      <Center bottom='0' transform='translateX(-50%)' left='50%' pos='absolute'>
-        <MotionBox
-          role='button'
-          fontSize='20px'
-          bgColor='transparent'
-          px='32px'
-          color='white'
-          border='solid 2px magenta'
-          style={{
-            opacity: opacity,
-            transition: "all .3s",
-          }}
-          _hover={{
-            bgColor: "black",
-            color: "magenta",
-          }}
-          py='4px'
-          borderRadius='8px'
-          fontWeight='extrabold'
-          letterSpacing='wider'
-          onClick={() => {
-            const aboutSection = document.getElementById("About");
-            window.scrollTo({
-              top: aboutSection.offsetTop,
-              behavior: "smooth",
-            });
-          }}
-          initial={{
-            opacity: 0,
-            transform: "translateY(120px)",
-          }}
-          animate={{
-            opacity: 1,
-            transform: "translateY(0)",
-          }}
-          transition={{
-            duration: 1.2,
-            delay: 1,
-          }}
-        >
-          Learn more
-        </MotionBox>
-      </Center>
-    </>
-  );
-}
