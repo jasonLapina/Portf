@@ -33,7 +33,8 @@ function Copy() {
       align='normal'
       pr='80px'
       py='40px'
-      overflow='auto'
+      overflowY='auto'
+      overflowX='hidden'
       gap='48px'
       className='copy'
     >
@@ -52,7 +53,7 @@ function Intro() {
       <Heading fontSize={{ md: "56px", base: "40px" }} mb='16px'>
         about me
       </Heading>
-      <HStack fontStyle='italic' gap='8px'>
+      <HStack flexWrap='wrap' fontStyle='italic' gap='8px'>
         <Text letterSpacing='widest' fontWeight='bold' color='var(--primary)'>
           Summary
         </Text>

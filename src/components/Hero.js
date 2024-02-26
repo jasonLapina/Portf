@@ -22,9 +22,9 @@ function Hero() {
         style={{
           opacity: opacity,
         }}
-        fontSize='20px'
+        fontSize={{ md: "20px", base: "14px" }}
         pos='absolute'
-        bottom='30%'
+        bottom={{ md: "30%", base: "15%" }}
       >
         <Text textAlign='center' maxW='720px'>
           An adept web developer skilled in both UI/UX design, prioritizing

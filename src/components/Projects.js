@@ -15,13 +15,10 @@ function Projects() {
   return (
     <Box mb='15vh' id='Projects'>
       <MySection heading='projects'>
-        {/* <MyTypewriter words={["Featured Projects"]} /> */}
         <TextHeading text={"Work"} />
-
         <Text
-          // bgColor='rgba(255,255,255,.2)'
           backdropFilter='blur(5px)'
-          fontSize='20px'
+          fontSize={{ md: "20px", base: "14px" }}
           py='16px'
           px='8px'
           borderRadius='10px'
@@ -88,6 +85,7 @@ function Projects() {
                       Tools:
                     </Text>
                     <HStack
+                      flexWrap='wrap'
                       flexDir={{ md: even ? "row" : "row-reverse" }}
                       justifyContent={{
                         base: "start",
