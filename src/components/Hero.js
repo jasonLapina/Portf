@@ -1,6 +1,7 @@
-import { Box, Button, Center, HStack, Text } from "@chakra-ui/react";
+import { Box, Button, Center, HStack, Image, Text } from "@chakra-ui/react";
 import MotionBox from "./UI/MotionBox";
 import { useTransform, useScroll } from "framer-motion";
+import classes from "./Hero.module.css";
 
 function Hero() {
   const { scrollY } = useScroll();
@@ -26,8 +27,9 @@ function Hero() {
         bottom='30%'
       >
         <Text textAlign='center' maxW='720px'>
-          I'm a web developer with a knack for quickly learning and implementing
-          new technologies to create innovative and efficient solutions.
+          An adept web developer skilled in both UI/UX design, prioritizing
+          seamless user experiences while maintaining visually appealing
+          interfaces.
         </Text>
         <Center>
           <Button
@@ -82,6 +84,7 @@ function Hero() {
             bgImage='url(/assets/socrates.webp)'
             bgSize='cover'
             bgPos='center'
+            className={classes.glitch}
           >
             JASON
           </MotionBox>
