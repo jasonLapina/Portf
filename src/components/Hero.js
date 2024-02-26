@@ -40,7 +40,7 @@ function Hero() {
             _active={{}}
             variant='ghost'
             color='var(--primary)'
-            fontSize='24px'
+            fontSize={{ md: "24px", base: "18px" }}
             onClick={() => {
               const scrollTo = document.getElementById("About");
               const offset = 40;
