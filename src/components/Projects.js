@@ -8,64 +8,6 @@ import { apiURL } from "../utils/config";
 import TextHeading from "./3d/3DHeading";
 
 function Projects() {
-  // const projs = [
-  //   {
-  //     title: "Leaderbored",
-  //     text: "Game portal to play HTML5 games and climb the leaderboard.",
-  //     image: [
-  //       "/assets/projs/leaderbored.png",
-  //       "/assets/projs/leaderbored2.png",
-  //     ],
-  //     link: "https://leaderbored.gg",
-  //     tags: {
-  //       work: ["Designed", "Developed"],
-  //       tools: ["Figma", "React"],
-  //     },
-  //   },
-  //   {
-  //     title: "Taktyl Studios",
-  //     text: "Company website to showcase their awards, services, IPCatalog, and how to contact them.",
-  //     image: ["/assets/projs/taktyl.png", "/assets/projs/taktyl2.png"],
-  //     link: "https://taktylstudios.com/",
-  //     tags: {
-  //       work: ["Developed"],
-  //       tools: ["Next.js"],
-  //     },
-  //   },
-  //   {
-  //     title: "LapsFlix",
-  //     text: "Mock project for a movie/series browsing application.",
-  //     image: ["/assets/projs/lapsflix.png", "/assets/projs/lapsflix2.png"],
-  //     link: "https://lapsflix-v3.vercel.app/",
-
-  //     tags: {
-  //       work: ["Designed", "Developed"],
-  //       tools: ["Figma", "Next.js"],
-  //     },
-  //   },
-  //   {
-  //     title: "JMG Writes",
-  //     text: "Mock project for a copywriter to showcase their work and connect with them.",
-  //     image: ["/assets/projs/jmg1.png", "/assets/projs/jmg2.png"],
-  //     link: "https://jmg-writes.vercel.app/",
-
-  //     tags: {
-  //       work: ["Designed", "Developed"],
-  //       tools: ["Figma", "React"],
-  //     },
-  //   },
-  //   {
-  //     title: "AYO 2023",
-  //     text: "Event booking website for Sikap Philippine's AYO2023.",
-  //     image: ["/assets/projs/ayo1.png", "/assets/projs/ayo2.png"],
-  //     link: "https://www.sikapphilippines.org/ayo2023",
-  //     tags: {
-  //       work: ["Designed", "Developed"],
-  //       tools: ["Wix", "Velo"],
-  //     },
-  //   },
-  // ];
-
   const { data, isLoading } = useProjects();
 
   if (isLoading) return <div />;
@@ -75,6 +17,18 @@ function Projects() {
       <MySection heading='projects'>
         {/* <MyTypewriter words={["Featured Projects"]} /> */}
         <TextHeading text={"Work"} />
+
+        <Text
+          // bgColor='rgba(255,255,255,.2)'
+          backdropFilter='blur(5px)'
+          fontSize='20px'
+          py='16px'
+          px='8px'
+          borderRadius='10px'
+          w='fit-content'
+        >
+          Below are some of the projects I've worked on.
+        </Text>
         {data.map((p, i) => {
           const { name, description, link, tools, tasks } = p;
 
