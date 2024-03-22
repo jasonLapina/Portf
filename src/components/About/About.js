@@ -58,7 +58,7 @@ function Profile() {
     },
     {
       icon: FaFacebookF,
-      link: "https://www.facebook.com/klemekek/",
+      link: "https://www.facebook.com/profile.php?id=61556608875685",
       color: "#1877F2",
     },
   ];
