@@ -1,28 +1,22 @@
-import { useMediaQuery } from "@chakra-ui/react";
-import { Text3D, Center, Sparkles } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
-
-function Copy({ text }) {
-  const [isMd] = useMediaQuery("(min-width: 767px)");
-
-  return (
-    <Center position={[isMd ? -5 : 0, 0, 1]}>
-      <Text3D size={isMd ? 2 : 1} font='/Heading.json'>
-        {text}
-        <meshNormalMaterial />
-      </Text3D>
-    </Center>
-  );
-}
+import { Heading, Center } from "@chakra-ui/react";
 
 export default function TextHeading({ text }) {
   return (
-    <Canvas>
-      <Suspense fallback={<></>}>
-        <Sparkles scale={9} />
-        <Copy text={text} />
-      </Suspense>
-    </Canvas>
+    <Center py='40px'>
+      <Heading
+        style={{
+          WebkitTextStroke: ".1vw var(--primary)",
+        }}
+        letterSpacing='wider'
+        fontSize='64px'
+        color='transparent'
+        bgSize='cover'
+        bgPos='center'
+        bgClip='text'
+        bgImage='url(https://png.pngtree.com/background/20210714/original/pngtree-abstract-technology-background-technical-electric-picture-image_1252603.jpg)'
+      >
+        {text}
+      </Heading>
+    </Center>
   );
 }

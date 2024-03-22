@@ -17,7 +17,7 @@ function Skills() {
     <>
       <Box mb='15vh' id='Skills' pos='relative'>
         {/* <Box pos='absolute' w='100%' h='100%'></Box> */}
-        <MySection heading='skills'>
+        <MySection>
           {/* <MyTypewriter words={["My tech stack"]} /> */}
           <TextHeading text={"Tech Stack"} />
           <Center pos='relative' my='80px'>
