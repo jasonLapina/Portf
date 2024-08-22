@@ -156,7 +156,7 @@ function Profile() {
           w='100%'
           textAlign='center'
         >
-          Developer | Designer
+          UI Developer
         </Text>
       </Box>
     </HStack>

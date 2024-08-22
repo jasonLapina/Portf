@@ -53,6 +53,16 @@ function Intro() {
       <Heading fontSize={{ md: "56px", base: "40px" }} mb='16px'>
         about me
       </Heading>
+      <Box as='h4'>
+        UI Developer @{" "}
+        <a
+          href='https://lemongrasscloud.com/'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <strong>Lemongrass Cloud</strong>
+        </a>
+      </Box>
       <HStack flexWrap='wrap' fontStyle='italic' gap='8px'>
         <Text letterSpacing='widest' fontWeight='bold' color='var(--primary)'>
           Summary

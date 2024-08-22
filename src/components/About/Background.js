@@ -2,6 +2,8 @@ import { Box, VStack, Heading, Text, HStack, Icon } from "@chakra-ui/react";
 
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 
+import experience from "../../data/experience.json";
+
 function Background() {
   return (
     <Box>
@@ -26,56 +28,19 @@ function Background() {
         </Text>
       </HStack>
       <VStack align='normal' mt='16px'>
-        <Box>
-          <Text fontWeight='semibold' color='var(--primary)'>
-            2023 - Present
-          </Text>
-          <Text fontWeight='bold' fontSize='20px'>
-            Blink Creative Studio, Frontend Developer
-          </Text>
-          <Text color='#aaa'>
-            Developed, optimized, and deployed a{" "}
-            <Website link={"https://milestones-worlds.jollibeegroup.com/"}>
-              3d project{" "}
-            </Website>
-            for Jollibee Foods Corporation. Updated the company{" "}
-            <Website link='https://blinkcreativestudio.com'>website.</Website>
-          </Text>
-        </Box>
-        <Box>
-          <Text fontWeight='semibold' color='var(--primary)'>
-            2022
-          </Text>
-          <Text fontWeight='bold' fontSize='20px'>
-            Freelance, Frontend Developer
-          </Text>
-          <Text color='#aaa'>
-            Worked briefly as a freelance developer. Developed and deployed an
-            e-commerce project.
-          </Text>
-        </Box>
-        <Box>
-          <Text fontWeight='semibold' color='var(--primary)'>
-            2022 - 2023
-          </Text>
-          <Text fontWeight='bold' fontSize='20px'>
-            Taktyl Studios, Frontend Developer
-          </Text>
-          <Text color='#aaa'>
-            Developed and deployed a{" "}
-            <Website link='https://leaderbored.gg'>game portal</Website>.
-            Developed a ticket booking{" "}
-            <Website link={"https://www.sikapphilippines.org/ayo2023"}>
-              website{" "}
-            </Website>{" "}
-            for AYO Philippines. Updated the company{" "}
-            <Website link={"https://taktylstudios.com/"}>website</Website>.
-            Worked on several other projects{" "}
-            <Box as='span' fontWeight='bold' color='magenta'>
-              (total of 8).
+        {experience.map(({ year, description, position, links }, i) => {
+          return (
+            <Box key={i}>
+              <Text fontWeight='semibold' color='var(--primary)'>
+                {year}
+              </Text>
+              <Text fontWeight='bold' fontSize='20px'>
+                {position}
+              </Text>
+              <Text color='#aaa'>{description}</Text>
             </Box>
-          </Text>
-        </Box>
+          );
+        })}
       </VStack>
     </Box>
   );
